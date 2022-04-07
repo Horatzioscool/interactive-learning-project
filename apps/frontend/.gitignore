@@ -6,7 +6,6 @@
 /out-tsc
 
 # dependencies
-/.angular
 /node_modules
 
 # IDEs and editors
@@ -38,3 +37,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+/.angular
+/.firebase

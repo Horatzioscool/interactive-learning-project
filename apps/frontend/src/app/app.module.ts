@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -43,6 +44,7 @@ import { CourseListComponent } from './components/course-list/course-list.compon
     AngularFireDatabaseModule,
     AppRoutingModule,
     FormsModule,
+    CommonModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
