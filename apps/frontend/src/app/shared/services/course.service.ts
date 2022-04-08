@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map, Observable } from 'rxjs';
-import { Course } from '../entities/course';
+import { Course, AddCourseDto } from '../entities/course';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +25,7 @@ export class CourseService {
       );
   }
 
-  public addCourse(course: Course) {
-    return this.firestore.collection<Course>('courses').add(course);
+  public addCourse(course: AddCourseDto) {
+    return this.firestore.collection<AddCourseDto>('courses').add(course);
   }
 }

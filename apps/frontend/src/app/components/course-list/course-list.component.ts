@@ -19,6 +19,9 @@ export class CourseListComponent implements OnInit {
   public newCourseName: string = '';
 
   public async addCourse() {
-    await this.courseService.addCourse({ name: this.newCourseName });
+    await this.courseService.addCourse({
+      name: this.newCourseName,
+      description: '',
+    });
   }
 }

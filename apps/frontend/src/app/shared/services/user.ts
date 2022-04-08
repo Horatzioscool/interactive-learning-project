@@ -5,3 +5,8 @@ export interface User {
   photoURL: string;
   emailVerified: boolean;
 }
+
+export interface UserRole {
+  userId: string;
+  role: 'admin' | 'teacher';
+}

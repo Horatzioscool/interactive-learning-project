@@ -6,9 +6,15 @@ import { AuthService } from '../../shared/services/auth.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-
 export class DashboardComponent implements OnInit {
   constructor(public authService: AuthService) {}
 
-  ngOnInit(): void {}
+  public isAdmin = false;
+
+  ngOnInit(): void {
+    this.authService.userRoles
+    .subscribe(roles => {
+      this.isAdmin = !!roles.find((r) => r.role === 'admin');
+    })
+  }
 }
