@@ -1,0 +1,8 @@
+export interface CourseeCourseStatus {
+  id: string;
+  courseId: string;
+  courseeId: string;
+
+  currentChapterId: string;
+  isCourseComplete: boolean;
+}

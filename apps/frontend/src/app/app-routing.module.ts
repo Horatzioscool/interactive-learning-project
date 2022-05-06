@@ -9,6 +9,8 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 // route guard
 import { AuthGuard } from './shared/guard/auth.guard';
 import { CourseListComponent } from './components/course-list/course-list.component';
+import { CreateCourseComponent } from './components/create-course/create-course.component';
+import { RoleGuard } from './shared/guard/role.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -18,6 +20,11 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'create-course',
+    component: CreateCourseComponent,
+    canActivate: [RoleGuard],
   },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
