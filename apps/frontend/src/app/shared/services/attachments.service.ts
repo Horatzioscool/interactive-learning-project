@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { AddAttachmentDto, Attachment } from '../entities/attachment';
 import { finalize, Observable } from 'rxjs';
-import { Collections } from '../entities/collections';
+import { Collections } from '../collections';
 import { getAllFromCollection } from './collection-helpers';
 import { AuthService } from './auth.service';
 

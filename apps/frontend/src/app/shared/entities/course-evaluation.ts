@@ -1,7 +1,8 @@
-export interface CourseEvaluation {
-  id: string;
-  courseId: string;
-  questions: QuestionDetails[];
+import { Entity } from './entity';
+
+export class CourseEvaluation extends Entity {
+  courseId?: string;
+  questions?: QuestionDetails[];
 }
 
 interface QuestionDetails {

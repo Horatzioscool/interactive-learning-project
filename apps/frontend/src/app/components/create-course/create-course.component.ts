@@ -1,7 +1,5 @@
-import { Course } from './../../shared/entities/course';
 import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/shared/entities/course';
-import { AddCourseDto } from '../../shared/entities/course';
 
 @Component({
   selector: 'app-create-course',
@@ -13,8 +11,5 @@ export class CreateCourseComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public newCourse: AddCourseDto = {
-    name: '',
-    description: '',
-  };
+  public newCourse: Course = new Course();
 }

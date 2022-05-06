@@ -38,6 +38,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { ImageModule } from 'primeng/image';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
+import { EntityServiceFactory } from './shared/services/entity.service';
 
 export const PrimeNgModules = [
   CardModule,
@@ -76,7 +77,7 @@ export const PrimeNgModules = [
     HttpClientModule,
     ...PrimeNgModules,
   ],
-  providers: [AuthService],
+  providers: [AuthService, EntityServiceFactory],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

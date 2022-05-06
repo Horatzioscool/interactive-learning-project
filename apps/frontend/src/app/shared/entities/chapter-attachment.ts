@@ -1,5 +1,6 @@
-export interface ChapterAttachment {
-  id: string;
-  chapterId: string;
-  attachmentId: string;
+import { Entity } from './entity';
+
+export class ChapterAttachment extends Entity {
+  chapterId?: string;
+  attachmentId?: string;
 }

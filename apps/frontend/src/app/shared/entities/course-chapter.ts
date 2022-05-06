@@ -1,8 +1,9 @@
-export interface CourseChapter {
-  id: string;
-  courseId: string;
-  title: string;
-  attachmentIds: string[];
+import { Entity } from './entity';
+
+export class CourseChapter extends Entity {
+  courseId?: string;
+  title?: string;
+  attachmentIds?: string[];
 }
 
 export interface AddChapterDto {

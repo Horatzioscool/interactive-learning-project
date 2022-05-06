@@ -8,7 +8,7 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { UserRole } from './user';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

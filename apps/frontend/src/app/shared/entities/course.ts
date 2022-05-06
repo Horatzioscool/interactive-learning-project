@@ -1,10 +1,6 @@
-export interface Course {
-  id: string;
-  name: string;
-  description: string;
-}
+import { Entity } from './entity';
 
-export interface AddCourseDto {
-  name: string;
-  description: string;
+export class Course extends Entity {
+  name?: string;
+  description?: string;
 }

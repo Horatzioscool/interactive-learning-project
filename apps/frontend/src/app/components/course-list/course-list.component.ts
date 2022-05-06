@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Collections } from 'src/app/shared/collections';
 import { Course } from 'src/app/shared/entities/course';
-import { CourseService } from '../../shared/services/course.service';
+import {
+  EntityService,
+  EntityServiceFactory,
+} from '../../shared/services/entity.service';
 
 @Component({
   selector: 'app-course-list',
@@ -8,10 +12,13 @@ import { CourseService } from '../../shared/services/course.service';
   styleUrls: ['./course-list.component.scss'],
 })
 export class CourseListComponent implements OnInit {
-  constructor(private courseService: CourseService) {}
+  private courseService: EntityService<Course>;
+  constructor(factory: EntityServiceFactory) {
+    this.courseService = factory.create(Collections.Course);
+  }
 
   ngOnInit(): void {
-    this.courseService.getCourses().subscribe((c) => (this.courses = c));
+    this.courseService.get().subscribe((c) => (this.courses = c));
   }
 
   public courses: Course[] = [];
@@ -19,9 +26,8 @@ export class CourseListComponent implements OnInit {
   public newCourseName: string = '';
 
   public async addCourse() {
-    await this.courseService.addCourse({
-      name: this.newCourseName,
-      description: '',
-    });
+    const course = new Course();
+    course.name = this.newCourseName;
+    await this.courseService.add(course);
   }
 }

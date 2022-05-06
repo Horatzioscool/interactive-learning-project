@@ -1,7 +1,8 @@
-export interface Attachment {
-  name: string;
-  fileName: string;
-  downloadURL: string;
+import { Entity } from './entity';
+export class Attachment extends Entity {
+  name?: string;
+  fileName?: string;
+  downloadURL?: string;
 }
 
 export interface AddAttachmentDto {
