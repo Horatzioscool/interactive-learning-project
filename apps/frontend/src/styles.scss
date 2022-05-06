@@ -4,6 +4,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  caret-color: transparent;
 }
 
 html,
@@ -117,6 +118,14 @@ label {
 
 .formControl:focus {
   border: 2px solid #d3d3d6;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+
+  caret-color: auto;
 }
 
 input::-webkit-input-placeholder {

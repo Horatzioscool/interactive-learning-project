@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -24,6 +26,28 @@ import { AppRoutingModule } from './app-routing.module';
 // service
 import { AuthService } from './shared/services/auth.service';
 import { CourseListComponent } from './components/course-list/course-list.component';
+import { AttachComponent } from './components/common/attach/attach.component';
+
+// PrimeNG modules for components
+import { CardModule } from 'primeng/card';
+import { DividerModule } from 'primeng/divider';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { FileUploadModule } from 'primeng/fileupload';
+import { TabViewModule } from 'primeng/tabview';
+import { ListboxModule } from 'primeng/listbox';
+import { InputTextModule } from 'primeng/inputtext';
+import { ImageModule } from 'primeng/image';
+
+export const PrimeNgModules = [
+  CardModule,
+  DividerModule,
+  OverlayPanelModule,
+  FileUploadModule,
+  TabViewModule,
+  ListboxModule,
+  InputTextModule,
+  ImageModule,
+];
 
 @NgModule({
   declarations: [
@@ -34,9 +58,11 @@ import { CourseListComponent } from './components/course-list/course-list.compon
     ForgotPasswordComponent,
     VerifyEmailComponent,
     CourseListComponent,
+    AttachComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
@@ -45,6 +71,8 @@ import { CourseListComponent } from './components/course-list/course-list.compon
     AppRoutingModule,
     FormsModule,
     CommonModule,
+    HttpClientModule,
+    ...PrimeNgModules,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

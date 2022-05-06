@@ -107,11 +107,15 @@ export class AuthService {
 
   // Sign in with Google
   GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      if (res) {
-        this.router.navigate(['dashboard']);
-      }
-    });
+    return this.AuthLogin(new auth.GoogleAuthProvider())
+      .then((res: any) => {
+        if (res) {
+          this.router.navigate(['dashboard']);
+        }
+      })
+      .catch((error) => {
+        window.alert(error);
+      });
   }
 
   // Auth logic to run auth providers

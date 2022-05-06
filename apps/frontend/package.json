@@ -6,12 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "build-prod": "ng build --configuration production",
+    "deploy": "ng build --configuration production && firebase deploy",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~13.2.0",
+    "@angular/animations": "^13.2.7",
     "@angular/common": "~13.2.0",
     "@angular/compiler": "~13.2.0",
     "@angular/core": "~13.2.0",
@@ -22,7 +22,10 @@
     "@angular/router": "~13.2.0",
     "bootstrap": "^5.1.3",
     "firebase": "^9.6.7",
+    "primeicons": "^5.0.0",
+    "primeng": "^13.3.3",
     "rxjs": "~7.5.0",
+    "save": "^2.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

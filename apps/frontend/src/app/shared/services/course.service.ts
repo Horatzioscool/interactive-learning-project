@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Course, AddCourseDto } from '../entities/course';
+import { getAllFromCollection } from './collection-helpers';
 
 @Injectable({
   providedIn: 'root',
@@ -10,19 +11,9 @@ export class CourseService {
   constructor(private firestore: AngularFirestore) {}
 
   public getCourses(): Observable<Course[]> {
-    return this.firestore
-      .collection<Course>('courses')
-      .snapshotChanges()
-      .pipe(
-        map((courses) =>
-          courses.map(
-            (c) =>
-              ({
-                ...c.payload.doc.data(),
-              } as Course)
-          )
-        )
-      );
+    return getAllFromCollection<Course>(
+      this.firestore.collection<Course>('courses')
+    );
   }
 
   public addCourse(course: AddCourseDto) {

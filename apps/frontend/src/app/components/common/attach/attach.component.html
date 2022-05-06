@@ -1,0 +1,36 @@
+<div>
+  <div class="attach-icon-container" (click)="openOverlay($event)">
+    <i class="pi pi-file attach-icon"></i>
+  </div>
+  <p-overlayPanel #op [dismissable]="true" [showCloseIcon]="true">
+    <ng-template pTemplate>
+      <p-tabView>
+        <p-tabPanel>
+          <ng-template pTemplate="header">
+            <i class="pi pi-eye"></i>
+          </ng-template>
+            <p-listbox [options]="attachments" [(ngModel)]="selectedAttachment" (onDblClick)="onSelectAttachment($event)" optionLabel="name">
+              <ng-template let-attachment pTemplate="item">
+                <p-card [header]="attachment.name">
+                  <p-image [src]="attachment.downloadURL" width="100" [preview]="true">
+                  </p-image>
+                </p-card>
+              </ng-template>
+          </p-listbox>
+        </p-tabPanel>
+        <p-tabPanel>
+          <ng-template pTemplate="header">
+            <i class="pi pi-plus"></i>
+          </ng-template>
+          <span class="p-float-label">
+            <input id="float-input" type="text" pInputText [(ngModel)]="newAttachmentName">
+            <label for="float-input">New Attachment Name</label>
+          </span>
+          <p-fileUpload name="attachFile[]" mode="basic" [customUpload]="true" (uploadHandler)="onUpload($event)">
+          </p-fileUpload>
+        </p-tabPanel>
+      </p-tabView>
+    </ng-template>
+  </p-overlayPanel>
+</div>
+

@@ -3,8 +3,8 @@
 Learn to create full Firebase authentication system with Angular using AngularFire2 library.
 
 ## Written Article
-[Full Angular 13 Firebase Authentication System](https://www.positronx.io/full-angular-firebase-authentication-system)
 
+[Full Angular 13 Firebase Authentication System](https://www.positronx.io/full-angular-firebase-authentication-system)
 
 - Sign in with Google
 - Sign in with username/password
@@ -18,9 +18,13 @@ Learn to create full Firebase authentication system with Angular using AngularFi
 
 **If you love this project then show your love by simply sharing this repo with others and don't forget to put a GitHub star ⭐ ! Thanks** :pray:
 
-
-
 ## Installation Process
+
 Run `npm install` to install all the required dependencies
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Course List Page 1 - Horatiu - https://interactivelearning-4e45d.web.app/static/design-showcase/course-list/v1/index.html
+Course List Page 2 - Adela - https://interactivelearning-4e45d.web.app/static/design-showcase/course-list/v2/index.html
+Course Page 1 - Anton - https://interactivelearning-4e45d.web.app/static/design-showcase/course-page/v1/index.png
+Course Page 2 - Bianca - https://interactivelearning-4e45d.web.app/static/design-showcase/course-page/v2/index.html

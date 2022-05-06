@@ -1,4 +1,10 @@
 export interface Attachment {
-  courseId: string;
-  id: string;
+  name: string;
+  fileName: string;
+  downloadURL: string;
+}
+
+export interface AddAttachmentDto {
+  name: string;
+  file: File;
 }
