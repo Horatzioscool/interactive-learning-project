@@ -27,6 +27,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './shared/services/auth.service';
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { AttachComponent } from './components/common/attach/attach.component';
+import { CreateCourseComponent } from './components/create-course/create-course.component';
+import { EntityServiceFactory } from './shared/services/entity.service';
 
 // PrimeNG modules for components
 import { CardModule } from 'primeng/card';
@@ -37,8 +39,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { ListboxModule } from 'primeng/listbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { ImageModule } from 'primeng/image';
-import { CreateCourseComponent } from './components/create-course/create-course.component';
-import { EntityServiceFactory } from './shared/services/entity.service';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 export const PrimeNgModules = [
   CardModule,
@@ -49,6 +50,7 @@ export const PrimeNgModules = [
   ListboxModule,
   InputTextModule,
   ImageModule,
+  InputTextareaModule,
 ];
 
 @NgModule({
