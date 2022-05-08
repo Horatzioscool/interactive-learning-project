@@ -4,7 +4,6 @@ export class Attachment extends Entity {
   fileName?: string;
   downloadURL?: string;
 }
-
 export interface AddAttachmentDto {
   name: string;
   file: File;

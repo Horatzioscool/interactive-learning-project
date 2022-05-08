@@ -40,6 +40,8 @@ import { ListboxModule } from 'primeng/listbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { ImageModule } from 'primeng/image';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ChapterListEditorComponent } from './components/create-course/chapter-list-editor/chapter-list-editor.component';
+import { CreateChapterComponent } from './components/create-course/chapter-list-editor/create-chapter/create-chapter.component';
 
 export const PrimeNgModules = [
   CardModule,
@@ -64,6 +66,8 @@ export const PrimeNgModules = [
     CourseListComponent,
     AttachComponent,
     CreateCourseComponent,
+    ChapterListEditorComponent,
+    CreateChapterComponent,
   ],
   imports: [
     BrowserModule,

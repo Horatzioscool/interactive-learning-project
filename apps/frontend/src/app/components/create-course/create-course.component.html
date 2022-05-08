@@ -1,4 +1,13 @@
 <p-card>
-  <input type="text" pInputText [(ngModel)]="newCourse.name">
-  <textarea pInputTextArea [(ngModel)]="newCourse.description"></textarea>
+  <div class="p-field">
+    <label for="course-name">Course Name</label>
+    <input id="course-name" pInputText [(ngModel)]="newCourse.name"/>
+  </div>
+  <div class="p-field">
+    <label for="course-description">Course Description</label>
+    <textarea id="course-description" pInputTextArea [(ngModel)]="newCourse.description"></textarea>
+  </div>
+  <p-divider></p-divider>
+  <app-chapter-list-editor></app-chapter-list-editor>
+  <p-divider></p-divider>
 </p-card>

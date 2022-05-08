@@ -18,7 +18,7 @@ export class CourseListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.courseService.get().subscribe((c) => (this.courses = c));
+    this.courseService.getAll().subscribe((c) => (this.courses = c));
   }
 
   public courses: Course[] = [];

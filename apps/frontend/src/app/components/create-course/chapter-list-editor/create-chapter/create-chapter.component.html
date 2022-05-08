@@ -1,0 +1,27 @@
+<div class="p-field">
+  <label for="chapter-title">Chapter Title</label>
+  <input id="chapter-title" pInputText [(ngModel)]="newChapterTitle"/>
+</div>
+<div class="p-field">
+  <div *ngIf="videoAttachment; else attachVideo">
+    <label>{{videoAttachment.name}}</label>
+    <i class="pi pi-cross" (click)="videoAttachment = undefined"></i>
+  </div>
+  <ng-template #attachVideo>
+    <app-attach  (attached)="videoAttached($event)"></app-attach>
+  </ng-template>
+</div>
+<div class="p-field">
+  <app-attach (attached)="addedAttachment($event)"></app-attach>
+  <p-listbox [options]="attachments" optionLabel="name">
+    <ng-template let-attachment pTemplate="item">
+      <span>
+        {{attachment.name}}
+      </span>
+      <i class="pi pi-cross" (click)="removeAttachment(attachment)"></i>
+    </ng-template>
+  </p-listbox>
+</div>
+<p-button (onClick)="created()">
+  Submit
+</p-button>

@@ -21,7 +21,7 @@ export class EntityService<T extends Entity> {
     private firestore: AngularFirestore
   ) {}
 
-  public get(): Observable<T[]> {
+  public getAll(): Observable<T[]> {
     return getAllFromCollection<T>(
       this.firestore.collection<T>(this.collectionName)
     );

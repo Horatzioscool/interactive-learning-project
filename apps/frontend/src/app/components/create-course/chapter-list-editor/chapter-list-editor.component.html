@@ -1,0 +1,9 @@
+<p-listbox [options]="chapters" optionLabel="name">
+  <ng-template let-chapter pTemplate="item">
+    <span>
+      {{chapter.title}}
+    </span>
+    <i class="pi pi-cross" (click)="removeChapter(chapter)"></i>
+  </ng-template>
+</p-listbox>
+<app-create-chapter (created)="addChapter($event)"></app-create-chapter>

@@ -6,21 +6,26 @@ import { finalize, Observable } from 'rxjs';
 import { Collections } from '../collections';
 import { getAllFromCollection } from './collection-helpers';
 import { AuthService } from './auth.service';
+import { EntityService, EntityServiceFactory } from './entity.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AttachmentsService {
   constructor(
-    private fireStore: AngularFirestore,
     private fireStorage: AngularFireStorage,
-    private authService: AuthService
-  ) {}
+    private authService: AuthService,
+    entityServiceFactory: EntityServiceFactory
+  ) {
+    this.attachmentService = entityServiceFactory.create(
+      Collections.Attachement
+    );
+  }
+  private attachmentService: EntityService<Attachment>;
 
-  private basePath = '/attachments';
+  private basePath = '/34444444s';
 
-  public create(attachment: AddAttachmentDto) {
-    const { file, ...otherAttachmentFields } = attachment;
+  public create(attachment: Attachment, file: File) {
     const path = `${this.basePath}/${this.authService.userData.uid || 'misc'}/${
       file.name
     }`;
@@ -32,11 +37,8 @@ export class AttachmentsService {
       .pipe(
         finalize(() => {
           storageRef.getDownloadURL().subscribe((downloadURL) => {
-            this.fireStore.collection<Attachment>(Collections.Attachement).add({
-              ...otherAttachmentFields,
-              fileName: file.name,
-              downloadURL,
-            } as Attachment);
+            attachment.downloadURL = downloadURL;
+            this.attachmentService.add(attachment);
           });
         })
       )
@@ -44,16 +46,6 @@ export class AttachmentsService {
   }
 
   public getAll(): Observable<Attachment[]> {
-    return getAllFromCollection<Attachment>(
-      this.fireStore.collection<Attachment>(Collections.Attachement)
-    );
-  }
-
-  public find(text: string): Observable<Attachment[]> {
-    return getAllFromCollection<Attachment>(
-      this.fireStore.collection<Attachment>(Collections.Attachement, (ref) =>
-        ref.where('name', '>=', text).where('name', '<=', text + '~')
-      )
-    );
+    return this.attachmentService.getAll();
   }
 }
