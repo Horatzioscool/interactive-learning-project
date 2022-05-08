@@ -1,18 +1,20 @@
-import { AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import {
+  AngularFirestoreCollection,
+  DocumentChangeAction,
+} from '@angular/fire/compat/firestore';
 import { map } from 'rxjs';
 
-export const getAllFromCollection = <T>(
+const mapDoc = <T>(e: DocumentChangeAction<T>) => {
+  return {
+    id: e.payload.doc.id,
+    ...e.payload.doc.data(),
+  } as T;
+};
+
+export const getFromCollection = <T>(
   collection: AngularFirestoreCollection<T>
 ) => {
-  return collection.snapshotChanges().pipe(
-    map((entities) =>
-      entities.map(
-        (e) =>
-          ({
-            id: e.payload.doc.id,
-            ...e.payload.doc.data(),
-          } as T)
-      )
-    )
-  );
+  return collection
+    .snapshotChanges()
+    .pipe(map((entities) => entities.map(mapDoc)));
 };

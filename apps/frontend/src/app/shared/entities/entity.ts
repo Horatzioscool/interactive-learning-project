@@ -1,8 +1,12 @@
 import { Guid } from 'guid-typescript';
 
-export abstract class Entity {
+export class Entity {
   public id: string;
-  public constructor() {
+  public constructor(id: string = Guid.raw()) {
     this.id = Guid.raw();
+  }
+
+  public static Empty() {
+    return new Entity(Guid.EMPTY);
   }
 }

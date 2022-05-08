@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import {
+  AngularFirestore,
+  DocumentSnapshotExists,
+} from '@angular/fire/compat/firestore';
+import { filter, map, Observable, from } from 'rxjs';
 import { Entity } from '../entities/entity';
-import { getAllFromCollection } from './collection-helpers';
+import { getFromCollection } from './collection-helpers';
 
 @Injectable({
   providedIn: 'root',
@@ -22,12 +25,57 @@ export class EntityService<T extends Entity> {
   ) {}
 
   public getAll(): Observable<T[]> {
-    return getAllFromCollection<T>(
+    return getFromCollection<T>(
       this.firestore.collection<T>(this.collectionName)
     );
   }
 
+  public getOneById(id: string): Observable<T> {
+    function mapDoc(d: DocumentSnapshotExists<T>): T {
+      return {
+        ...d.data(),
+      } as T;
+    }
+
+    return this.firestore
+      .collection<T>(this.collectionName)
+      .doc(id)
+      .get()
+      .pipe(filter((d) => d.exists))
+      .pipe(map((d) => mapDoc(d as DocumentSnapshotExists<T>)));
+  }
+
+  public getManyById(ids: string[]): Observable<T[]> {
+    return from(
+      this.firestore
+        .collection<T>(this.collectionName)
+        .ref.where('id', 'in', ids)
+        .get()
+    )
+      .pipe(filter((s) => !s.empty))
+      .pipe(map((s) => s.docs))
+      .pipe(
+        map((d) =>
+          d.map(
+            (doc) =>
+              ({
+                ...doc.data(),
+              } as T)
+          )
+        )
+      );
+  }
+
   public add(instance: T) {
+    return this.firestore
+      .collection<T>(this.collectionName)
+      .doc(instance.id)
+      .set({
+        ...instance,
+      });
+  }
+
+  public update(instance: T) {
     return this.firestore
       .collection<T>(this.collectionName)
       .doc(instance.id)

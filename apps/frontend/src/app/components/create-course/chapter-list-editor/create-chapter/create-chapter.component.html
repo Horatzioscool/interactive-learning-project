@@ -3,15 +3,17 @@
   <input id="chapter-title" pInputText [(ngModel)]="newChapterTitle"/>
 </div>
 <div class="p-field">
+  <label>Video</label>
   <div *ngIf="videoAttachment; else attachVideo">
     <label>{{videoAttachment.name}}</label>
     <i class="pi pi-cross" (click)="videoAttachment = undefined"></i>
   </div>
   <ng-template #attachVideo>
-    <app-attach  (attached)="videoAttached($event)"></app-attach>
+    <app-attach (attached)="videoAttached($event)" [isVideoOnly]="true"></app-attach>
   </ng-template>
 </div>
 <div class="p-field">
+  <label>Attachments</label>
   <app-attach (attached)="addedAttachment($event)"></app-attach>
   <p-listbox [options]="attachments" optionLabel="name">
     <ng-template let-attachment pTemplate="item">

@@ -8,6 +8,13 @@
     <textarea id="course-description" pInputTextArea [(ngModel)]="newCourse.description"></textarea>
   </div>
   <p-divider></p-divider>
-  <app-chapter-list-editor></app-chapter-list-editor>
+  <app-chapter-list-editor #chapterList></app-chapter-list-editor>
   <p-divider></p-divider>
+  <div class="p-field">
+    <label for="quiz-url">Quiz Url</label>
+    <input id="quiz-url" pInputText [(ngModel)]="newCourse.quizUrl"/>
+  </div>
+  <p-button (onClick)="createCourse()">
+    Submit
+  </p-button>
 </p-card>

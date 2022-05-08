@@ -42,6 +42,8 @@ import { ImageModule } from 'primeng/image';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ChapterListEditorComponent } from './components/create-course/chapter-list-editor/chapter-list-editor.component';
 import { CreateChapterComponent } from './components/create-course/chapter-list-editor/create-chapter/create-chapter.component';
+import { CourseDisplayComponent } from './components/course-display/course-display.component';
+import { CurrentChapterComponent } from './components/course-display/current-chapter/current-chapter.component';
 
 export const PrimeNgModules = [
   CardModule,
@@ -68,6 +70,8 @@ export const PrimeNgModules = [
     CreateCourseComponent,
     ChapterListEditorComponent,
     CreateChapterComponent,
+    CourseDisplayComponent,
+    CurrentChapterComponent,
   ],
   imports: [
     BrowserModule,

@@ -26,8 +26,17 @@
             <input id="float-input" type="text" pInputText [(ngModel)]="newAttachmentName">
             <label for="float-input">New Attachment Name</label>
           </span>
-          <p-fileUpload name="attachFile[]" mode="basic" [customUpload]="true" (uploadHandler)="onUpload($event)">
-          </p-fileUpload>
+          <div *ngIf="!isVideoOnly; else videoOnlyUpload">
+            <p-fileUpload name="attachFile[]" mode="basic" [customUpload]="true"
+            (uploadHandler)="onUpload($event)">
+            </p-fileUpload>
+          </div>
+          <ng-template #videoOnlyUpload>
+            <p-fileUpload name="attachFile[]" mode="basic" [customUpload]="true"
+            accept="video/*"
+            (uploadHandler)="onUpload($event)">
+            </p-fileUpload>
+          </ng-template>
         </p-tabPanel>
       </p-tabView>
     </ng-template>

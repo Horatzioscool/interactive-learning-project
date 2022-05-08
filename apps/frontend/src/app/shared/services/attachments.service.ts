@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { AddAttachmentDto, Attachment } from '../entities/attachment';
+import { Attachment } from '../entities/attachment';
 import { finalize, Observable } from 'rxjs';
-import { Collections } from '../collections';
-import { getAllFromCollection } from './collection-helpers';
 import { AuthService } from './auth.service';
 import { EntityService, EntityServiceFactory } from './entity.service';
+import { Collections } from '../entities/collections';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +21,7 @@ export class AttachmentsService {
   }
   private attachmentService: EntityService<Attachment>;
 
-  private basePath = '/34444444s';
+  private basePath = '/attachments';
 
   public create(attachment: Attachment, file: File) {
     const path = `${this.basePath}/${this.authService.userData.uid || 'misc'}/${

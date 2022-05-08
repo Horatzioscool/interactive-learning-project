@@ -1,6 +1,7 @@
 import {
   Component,
   EventEmitter,
+  Input,
   OnInit,
   Output,
   ViewChild,
@@ -15,6 +16,8 @@ import { AttachmentsService } from 'src/app/shared/services/attachments.service'
   styleUrls: ['./attach.component.scss'],
 })
 export class AttachComponent implements OnInit {
+  @Input('isVideoOnly') isVideoOnly!: boolean;
+
   @ViewChild('op') overlayPanel!: OverlayPanel;
 
   @Output('attached') attachedEvent: EventEmitter<Attachment> =
@@ -33,7 +36,13 @@ export class AttachComponent implements OnInit {
   }
 
   public async loadAttachments() {
-    this.attachmentService.getAll().subscribe((a) => (this.attachments = a));
+    if (this.isVideoOnly) {
+      this.attachmentService
+        .getAll()
+        .subscribe((a) => (this.attachments = a.filter((a) => a.isVideo)));
+    } else {
+      this.attachmentService.getAll().subscribe((a) => (this.attachments = a));
+    }
   }
 
   private attached(attachment: Attachment) {
@@ -52,6 +61,7 @@ export class AttachComponent implements OnInit {
     const newFile = event.files[0];
     const newAttachment = new Attachment();
     newAttachment.name = this.newAttachmentName || 'New Attachment';
+    newAttachment.isVideo = this.isVideoOnly;
     this.attachmentService.create(newAttachment, newFile);
     this.attached(newAttachment);
   }

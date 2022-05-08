@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Collections } from 'src/app/shared/collections';
+import { Collections } from 'src/app/shared/entities/collections';
 import { Course } from 'src/app/shared/entities/course';
 import {
   EntityService,

@@ -11,6 +11,7 @@ import { AuthGuard } from './shared/guard/auth.guard';
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
 import { RoleGuard } from './shared/guard/role.guard';
+import { CourseDisplayComponent } from './components/course-display/course-display.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -21,14 +22,19 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent },
+  { path: 'course-list', component: CourseListComponent },
   {
     path: 'create-course',
     component: CreateCourseComponent,
     canActivate: [RoleGuard],
   },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: VerifyEmailComponent },
-  { path: 'course-list', component: CourseListComponent },
+  {
+    path: 'course/:id',
+    component: CourseDisplayComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

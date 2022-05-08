@@ -1,5 +1,5 @@
 import { Entity } from './entity';
-export class CourseeCourseStatus extends Entity {
+export class CourseeProgress extends Entity {
   courseId?: string;
   courseeId?: string;
 

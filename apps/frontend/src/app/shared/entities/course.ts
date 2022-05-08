@@ -6,4 +6,6 @@ export class Course extends Entity {
 
   authorId?: string;
   chapterIds?: string[];
+
+  quizUrl?: string;
 }
