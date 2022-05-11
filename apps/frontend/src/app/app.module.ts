@@ -51,7 +51,7 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { NavigationComponent } from './components/navigation/navigation.component';
 /* import {CardFancyExample } from "./components/common/card.component"; */
 
-export const PrimeNgModules = [
+export const UiComponentModules = [
   CardModule,
   DividerModule,
   OverlayPanelModule,
@@ -61,6 +61,9 @@ export const PrimeNgModules = [
   InputTextModule,
   ImageModule,
   InputTextareaModule,
+  MatCardModule,
+  MatButtonModule,
+  MatProgressBarModule,
 ];
 
 @NgModule({
@@ -93,10 +96,7 @@ export const PrimeNgModules = [
     FormsModule,
     CommonModule,
     HttpClientModule,
-    MatCardModule,
-    MatButtonModule,
-    MatProgressBarModule,
-    ...PrimeNgModules,
+    ...UiComponentModules,
   ],
   providers: [AuthService, EntityServiceFactory],
   bootstrap: [AppComponent],
