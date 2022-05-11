@@ -20,21 +20,17 @@
         <div class="w-dyn-list">
           <div *ngFor="let course of courses.slice(2,4)">
             <div>
-              
-           {{course.name}} 
+              {{course.name}} 
             </div>
           </div> 
-        
-
-          </div>
-          </div>
-    
-<div class="w-container">
-  <div class="section-heading">
-    <h2 class="section-title">Most Recent</h2>
-    <div class="divider"></div>
-  </div>
-  <div class="w-dyn-list">
+        </div>
+      </div>
+    <div class="w-container">
+      <div class="section-heading">
+        <h2 class="section-title">Most Recent</h2>
+        <div class="divider"></div>
+      </div>
+    <div class="w-dyn-list">
     <div role="list" class="w-clearfix w-dyn-items w-row">
       <div role="listitem" class="blog-thumbnail ">
         <div *ngFor="let course of courses.slice(0,6)">
@@ -48,3 +44,7 @@
 </div>
 
 
+<div class="add">
+  <input type=button class="addbtn" *ngIf="isTeacher" onClick="location.href='http://localhost:4200/create-course'"
+         value='Add a new Course'>
+</div>
