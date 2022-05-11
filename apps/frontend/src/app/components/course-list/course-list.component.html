@@ -11,15 +11,7 @@
   </h1>
 </div>
 </div>
-
-<div>
-  <h2>
-    Add a new course
-  </h2>
-  <input type="text" [(ngModel)]="newCourseName"/>
-  <button (click)="addCourse()">Submit</button>
-
-  <h2>
-    <app-attach></app-attach>
-  </h2>
+<div class="add">
+  <input type=button class="addbtn" onClick="location.href='http://localhost:4200/create-course'"
+         value='Add a new Course'>
 </div>
