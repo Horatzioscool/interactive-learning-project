@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -44,6 +47,9 @@ import { ChapterListEditorComponent } from './components/create-course/chapter-l
 import { CreateChapterComponent } from './components/create-course/chapter-list-editor/create-chapter/create-chapter.component';
 import { CourseDisplayComponent } from './components/course-display/course-display.component';
 import { CurrentChapterComponent } from './components/course-display/current-chapter/current-chapter.component';
+import { CourseCardComponent } from './components/course-card/course-card.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+/* import {CardFancyExample } from "./components/common/card.component"; */
 
 export const PrimeNgModules = [
   CardModule,
@@ -72,6 +78,8 @@ export const PrimeNgModules = [
     CreateChapterComponent,
     CourseDisplayComponent,
     CurrentChapterComponent,
+    CourseCardComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +93,9 @@ export const PrimeNgModules = [
     FormsModule,
     CommonModule,
     HttpClientModule,
+    MatCardModule,
+    MatButtonModule,
+    MatProgressBarModule,
     ...PrimeNgModules,
   ],
   providers: [AuthService, EntityServiceFactory],
