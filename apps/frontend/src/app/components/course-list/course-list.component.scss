@@ -9,10 +9,104 @@
 }
 .up{
   display:block;
-  background:url("https://wallup.net/wp-content/uploads/2016/01/170001-nature-sky-sunset-orange-clouds-748x468.jpg") ;
+  background:url("https://elearningindustry.com/wp-content/uploads/2019/09/online-courses-what-students-want.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
+.introduction {
+  position: relative;
+  height: 500px;
+  padding-top: 184px;
+  background-color: aqua;
+  background: linear-gradient(135deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%),url("https://elearningindustry.com/wp-content/uploads/2019/09/online-courses-what-students-want.jpg");
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+}
+.hero-content {
+  text-align: center;
+}
+.w-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+}
+.w-container:before, .w-container:after {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+.w-container:after {
+  clear: both;
+}
+.subtitle {
+  font-size: 2em;
+  color: #fff;
+  font-family: Lora,sans-serif;
+}
+.subheading {
+  margin-bottom: 30px;
+  font-family: Oxygen, sans-serif;
+  color: hsla(0, 0%, 100%, 0.63);
+  font-size: 18px;
+  font-weight: 300;
+}
+.introduction{
+  padding: 120px;
+  text-align: center;
+}
+.button {
+  padding: 12px 31px;
+  border-radius: 3px;
+  background-color: #202f9c;
+  -webkit-transition: background-color 200ms ease, color 200ms ease;
+  transition: background-color 200ms ease, color 200ms ease;
+  font-family: Oxygen, sans-serif;
+  color: #fff;
+  font-weight: 300;
+  padding: 9px 15px;
+  color: white;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover{
+  background-color: orange;
+}
+.main-section .bottom-padding {
+  padding-top: 20px;
+  padding-bottom: 89px;
+}
+.main-section{
+  background-color: #f7f7f7;
+  font-family: Lora,sans-serif;
+  
+}
+.section-heading{
+  text-align: center;
+}
+.section-title {
+  margin-top: 60px;
+  font-size: 25px;
+  line-height: 27px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-family: Oxygen, sans-serif;
+  color: #2e2e2e;
+}
+.divider {
+  display: block;
+  width: 20%;
+  height: 1px;
+  margin: 16px auto;
+  background-color: #dedede;
+  list-style-type: lower-alpha;
+}
+
+
 .buttons{
   text-align:end;
 
