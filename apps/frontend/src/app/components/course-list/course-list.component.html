@@ -1,19 +1,50 @@
-<p>course-list works!</p>
-<div *ngFor="let course of courses">
-  <h1>
-    {{course.name}}
-  </h1>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lora&family=Oxygen:wght@300;400&display=swap');
+</style>
+  <div class="introduction wf-section">
+    <div class="subtitle">
+      Evolving today
+    </div>
+    <div class="subheading">
+      A platform brought to you by your universitiy so you always have access to your courses
+    </div>
+    <a href="#Latest-post" style="opacity: 1;" class="button">View Latest Courses</a>
+    </div>
+    <div id="posts" class="main-section bottom-padding wf-section">
+      <div id="Latest-post" class="w-container">
+        <div class="section-heading">
+          <h2 class="section-title">Featured Courses</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="w-dyn-list">
+          <div *ngFor="let course of courses.slice(2,4)">
+            <div>
+              {{course.name}} 
+            </div>
+          </div> 
+        </div>
+      </div>
+    <div class="w-container">
+      <div class="section-heading">
+        <h2 class="section-title">Most Recent</h2>
+        <div class="divider"></div>
+      </div>
+    <div class="w-dyn-list">
+    <div role="list" class="w-clearfix w-dyn-items w-row">
+      <div role="listitem" class="blog-thumbnail ">
+        <div *ngFor="let course of courses.slice(0,6)">
+          <div>
+           {{course.name}} 
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
 </div>
 
 
-<div>
-  <h2>
-    Add a new course
-  </h2>
-  <input type="text" [(ngModel)]="newCourseName"/>
-  <button (click)="addCourse()">Submit</button>
-
-  <h2>
-    <app-attach></app-attach>
-  </h2>
+<div class="add">
+  <input type=button class="addbtn" *ngIf="isTeacher" onClick="location.href='http://localhost:4200/create-course'"
+         value='Add a new Course'>
 </div>

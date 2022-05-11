@@ -5,6 +5,7 @@ import {
   EntityService,
   EntityServiceFactory,
 } from '../../shared/services/entity.service';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-course-list',
@@ -13,21 +14,18 @@ import {
 })
 export class CourseListComponent implements OnInit {
   private courseService: EntityService<Course>;
-  constructor(factory: EntityServiceFactory) {
+  constructor(factory: EntityServiceFactory, public authService: AuthService) {
     this.courseService = factory.create(Collections.Course);
   }
 
+  public isTeacher = false;
+
   ngOnInit(): void {
     this.courseService.getAll().subscribe((c) => (this.courses = c));
+    this.authService.userRoles.subscribe((roles) => {
+      this.isTeacher = !!roles.find((r) => r.role === 'teacher');
+    });
   }
 
   public courses: Course[] = [];
-
-  public newCourseName: string = '';
-
-  public async addCourse() {
-    const course = new Course();
-    course.name = this.newCourseName;
-    await this.courseService.add(course);
-  }
 }
