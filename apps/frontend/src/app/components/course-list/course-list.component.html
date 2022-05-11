@@ -12,6 +12,6 @@
 </div>
 </div>
 <div class="add">
-  <input type=button class="addbtn" onClick="location.href='http://localhost:4200/create-course'"
+  <input type=button class="addbtn" *ngIf="isTeacher" onClick="location.href='http://localhost:4200/create-course'"
          value='Add a new Course'>
 </div>
