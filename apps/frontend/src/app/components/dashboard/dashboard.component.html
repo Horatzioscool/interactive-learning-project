@@ -1,95 +1,27 @@
-<!--     
-    <div data-collapse="tiny" data-animation="over-right" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav" style="opacity: 1;">
-      <div class="w-container">
-        <a href="/" aria-current="page" class="logo w-nav-brand w--current" aria-label="home">
-          <img src="https://upload.wikimedia.org/wikipedia/ro/thumb/b/ba/Logo_Universitatea_Babe%C8%99-Bolyai.svg/1280px-Logo_Universitatea_Babe%C8%99-Bolyai.svg.png" alt="Logo UBB" class="logo"/>
-        </a>
-        <nav role="navigation" class="nav-menu w-nav-menu" style="transform: translateX(0px) translateY(0px);">
-          <a href="/" aria-current="page" class="nav-link w-nav-link w--current" style="max-width: 728px;">Home</a>
-          <a href="/categories" class="nav-link w-nav-link" style="max-width: 728px;">my courses</a>
-          <a href="/about" class="nav-link w-nav-link" style="max-width: 728px;">teachers</a>
-          <a href="/contact" class="nav-link w-nav-link" style="max-width: 728px;">account</a>
-          <a href="#" class="close-x w-hidden-main w-hidden-medium w-hidden-small">×</a>
-        </nav>
-    </div>
-    </div> -->
-    <app-navigation></app-navigation>
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="inner-adjust">
-
-        <div class="pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2 profile">Your User Profile</h1>
-        </div>
-        
-        <div class="container" *ngIf="authService.userData as user">
-            <div class="media side-1">
-              
-              <img class=" mr-5 img-thumbnail rounded-circle img" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-                alt="{{user.displayName}}">
-                <h4><strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h4>
-                <p>{{user.email}}</p>
-              
-            </div>
-            <div class="side-2">
-              <h3>Recently enrolled in</h3>
-              <div class="container">
-              <app-course-card></app-course-card>
-              <app-course-card></app-course-card>
-             <!--  <mat-card class="example-card side">
-                
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Shiba Inu</mat-card-title>
-                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-actions>
-                  <button mat-button>RESUME</button>
-                  <button mat-button>SHARE</button>
-                </mat-card-actions>
-              </mat-card> -->
-              </div>
-            </div>
-              <!-- <div class="media-body side"> -->
-                
-              <!--   <p>User ID: <strong>{{user.uid}}</strong></p> -->
-                
-          <!--       <p>Email Verified: <strong>{{user.emailVerified}}</strong></p> -->
-             <!--  </div> -->
-            
-         
-        </div>
-
+<!-- <div class="component"> -->
+  <app-navigation></app-navigation>
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="inner-adjust">
+      <div class="pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 profile">Your User Profile</h1>
       </div>
-    </main>
-    
-    
-<!--     <!-- Main content 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="inner-adjust">
-
-        <div class="pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">User Profile</h1>
-        </div>
-        <!-- Show user data when logged in 
-        <div class="row" *ngIf="authService.userData as user">
-          <div class="col-md-12">
-            <div class="media">
-              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+        
+      <div class="container" *ngIf="authService.userData as user">
+        <div class="media side-1">
+          <img class=" mr-5 img-thumbnail rounded-circle img" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
                 alt="{{user.displayName}}">
-              <div class="media-body">
-                <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                <p>User ID: <strong>{{user.uid}}</strong></p>
-                <p>Email: <strong>{{user.email}}</strong></p>
-                <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-              </div>
-            </div>
+          <h4><strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h4>
+          <p>{{user.email}}</p>
+              
+        </div>
+        <div class="side-2">
+          <h3>Recently enrolled in</h3>
+          <div class="container">
+              <app-course-card></app-course-card>
+              <app-course-card></app-course-card>
           </div>
         </div>
-
-      </div>
-    </main>
-
-  
-</div> -->
+        </div>
+    </div>
+  </main>
+<!-- </div> -->
