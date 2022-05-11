@@ -1,14 +1,17 @@
 <mat-card class="example-card side">
-                
+
     <img mat-card-image src='https://www.alphalearn.com/wp-content/uploads/2021/11/e-learning-2.jpg' alt="Course Photo">
-    
+
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{courseName}}</mat-card-title>
-      <mat-card-subtitle>{{chapterNumber}}</mat-card-subtitle>
+      <mat-card-title>{{course.name}}</mat-card-title>
+      <mat-card-subtitle>{{chapter.title}}</mat-card-subtitle>
     </mat-card-header>
+    <mat-card-content>
+      <mat-progress-bar [value]="courseProgress"></mat-progress-bar>
+    </mat-card-content>
     <mat-card-actions>
-      <button mat-button>PLAY</button>
+      <button mat-button (click)="goToCourse()">PLAY</button>
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card>

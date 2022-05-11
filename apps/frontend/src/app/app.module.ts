@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -50,7 +51,6 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { NavigationComponent } from './components/navigation/navigation.component';
 /* import {CardFancyExample } from "./components/common/card.component"; */
 
-
 export const PrimeNgModules = [
   CardModule,
   DividerModule,
@@ -80,7 +80,6 @@ export const PrimeNgModules = [
     CurrentChapterComponent,
     CourseCardComponent,
     NavigationComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -96,6 +95,7 @@ export const PrimeNgModules = [
     HttpClientModule,
     MatCardModule,
     MatButtonModule,
+    MatProgressBarModule,
     ...PrimeNgModules,
   ],
   providers: [AuthService, EntityServiceFactory],

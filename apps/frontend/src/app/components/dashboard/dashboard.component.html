@@ -4,20 +4,21 @@
       <div class="pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2 profile">Your User Profile</h1>
       </div>
-        
+
       <div class="container" *ngIf="authService.userData as user">
         <div class="media side-1">
           <img class=" mr-5 img-thumbnail rounded-circle img" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
                 alt="{{user.displayName}}">
           <h4><strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h4>
           <p>{{user.email}}</p>
-              
+
         </div>
         <div class="side-2">
           <h3>Recently enrolled in</h3>
           <div class="container">
-              <app-course-card></app-course-card>
-              <app-course-card></app-course-card>
+            <div *ngFor="let courseAndChapter of coursesAndChapters">
+              <app-course-card  [course]="courseAndChapter[0]" [courseChapter]="courseAndChapter[1]"></app-course-card>
+            </div>
           </div>
         </div>
         </div>
