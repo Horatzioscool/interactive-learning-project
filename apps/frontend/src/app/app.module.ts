@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -44,11 +47,11 @@ import { ChapterListEditorComponent } from './components/create-course/chapter-l
 import { CreateChapterComponent } from './components/create-course/chapter-list-editor/create-chapter/create-chapter.component';
 import { CourseDisplayComponent } from './components/course-display/course-display.component';
 import { CurrentChapterComponent } from './components/course-display/current-chapter/current-chapter.component';
-import {MenuModule} from "primeng/menu";
-import { CourseChatComponent } from './components/course-display/course-chat/course-chat.component';
+import { CourseCardComponent } from './components/course-card/course-card.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 import { TeacherChatComponent } from './components/teacher-chat/teacher-chat.component';
 
-export const PrimeNgModules = [
+export const UiComponentModules = [
   CardModule,
   DividerModule,
   OverlayPanelModule,
@@ -58,6 +61,9 @@ export const PrimeNgModules = [
   InputTextModule,
   ImageModule,
   InputTextareaModule,
+  MatCardModule,
+  MatButtonModule,
+  MatProgressBarModule,
 ];
 
 @NgModule({
@@ -75,24 +81,24 @@ export const PrimeNgModules = [
     CreateChapterComponent,
     CourseDisplayComponent,
     CurrentChapterComponent,
-    CourseChatComponent,
+    CourseCardComponent,
+    NavigationComponent,
     TeacherChatComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AngularFireModule.initializeApp(environment.firebase),
-        AngularFireAuthModule,
-        AngularFirestoreModule,
-        AngularFireStorageModule,
-        AngularFireDatabaseModule,
-        AppRoutingModule,
-        FormsModule,
-        CommonModule,
-        HttpClientModule,
-        ...PrimeNgModules,
-        MenuModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    AppRoutingModule,
+    FormsModule,
+    CommonModule,
+    HttpClientModule,
+    ...UiComponentModules,
+  ],
   providers: [AuthService, EntityServiceFactory],
   bootstrap: [AppComponent],
 })

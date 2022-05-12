@@ -302,8 +302,8 @@ input:-moz-placeholder {
 .sidebar a:hover,
 a:not([href]):not([tabindex]):focus,
 a:not([href]):not([tabindex]):hover {
-  color: #e91e63;
-  background: #efefef;
+ /*  color: #e91e63;
+  background: #efefef; */
 }
 
 /* * Content */
@@ -369,7 +369,10 @@ i {
 }
 
 .inner-adjust {
+  width: 100%;
+  height: 100vh;
   padding: 0 20px;
+  box-shadow: 1px 1px #d1d7dc inset, 0 -1px #d1d7dc inset;
 }
 
 .action-block {
@@ -678,3 +681,6 @@ body .table thead th {
     display: none;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

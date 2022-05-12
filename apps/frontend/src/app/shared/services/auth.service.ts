@@ -1,5 +1,4 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User } from '../services/user';
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
@@ -7,7 +6,7 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import { UserRole } from './user';
+import { UserRole, User } from './user';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -16,6 +15,7 @@ import { Subject } from 'rxjs';
 export class AuthService {
   public userData: any; // Save logged in user data
   public userRoles: Subject<UserRole[]> = new Subject();
+  public user: Subject<User> = new Subject();
 
   constructor(
     public afs: AngularFirestore, // Inject Firestore service
@@ -28,6 +28,7 @@ export class AuthService {
     this.afAuth.authState.subscribe((user) => {
       if (user) {
         this.userData = user;
+        this.user.next(user as User);
         afs
           .collection<UserRole>('userRoles', (ref) =>
             ref.where('userId', '==', user.uid)
