@@ -34,9 +34,14 @@ export class CourseChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.courseChatService
-      .getChatInfoForCourse(this.course.id)
+      .getChatInfoForCourse(this.course.id, this.authService.userData.uid)
       .subscribe((ci) => {
-        if (!ci) this.isChatStarted = false;
+        if (!ci) {
+          this.isChatStarted = false;
+        } else {
+          this.isChatStarted = true;
+          this.courseChat = ci;
+        }
       });
 
     if (!this.course.authorId) throw new Error('AuthorId was undefined');

@@ -1,1 +1,13 @@
-<p>teacher-chat works!</p>
+<div *ngFor="let chat of chats">
+  <h1>
+    Chat with {{chat.courseeName}}
+  </h1>
+  <div *ngFor="let message of getMessages(chat)">
+    <span *ngIf="message.isSender">Me:</span>
+    {{message.text}}
+  </div>
+  <input type="text" [(ngModel)]="newMessageText"/>
+  <button (click)="sendMessage(chat)">
+    Send Message
+  </button>
+</div>
