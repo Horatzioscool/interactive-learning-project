@@ -18,12 +18,12 @@
   <ng-template #currentChapter >
     <div class="current" style="display:flex">
       <div class="align" style="flex:70%;overflow-y:hidden">
-        <button pButton type="button" style="background-color:white;margin-left:20px;border-right-color:black "  class="p-button-text"  (onClick)="previousChapter()">
-          Prev Chapter
+        <div >
+        <button pButton type="button" style="background-color:white;margin-left:20px;border:3px solid dodgerblue "icon="pi pi-caret-left"  class="p-button-text"  (click)="previousChapter()">
         </button>
-        <button  pButton  style="background-color:white;border-left-color:black " class="p-button-text" (onClick)="nextChapter()">
-          Complete Chapter
+        <button  pButton  style="background-color:white;border:3px solid dodgerblue " icon="pi pi-caret-right" class="p-button-text" (click)="nextChapter()">
         </button>
+        </div>
       <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
 
 

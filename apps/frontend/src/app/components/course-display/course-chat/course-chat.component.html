@@ -1,5 +1,5 @@
 <div style="margin-bottom: 20px" *ngIf="isChatStarted; else noChat">
- <h1 > Chat with {{authorName}}</h1>
+ <h2 > Chat with {{authorName}}</h2>
   <div>
     <div *ngFor="let message of getMessages()">
       <span *ngIf="message.isSender">Me: </span>
