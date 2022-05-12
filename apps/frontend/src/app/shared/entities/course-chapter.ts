@@ -5,4 +5,6 @@ export class CourseChapter extends Entity {
   title?: string;
   videoAttachmentId?: string;
   attachmentIds?: string[];
+  description?: string;
+  chapterNumber: number = 0;
 }

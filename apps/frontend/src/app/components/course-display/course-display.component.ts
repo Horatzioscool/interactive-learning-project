@@ -57,7 +57,10 @@ export class CourseDisplayComponent implements OnInit {
         if (!this.course.chapterIds) throw new Error('chapterIds was null');
         this.chapterService
           .getManyById(this.course.chapterIds)
-          .subscribe((chs) => (this.chapters = chs));
+          .subscribe((chs) => {
+            this.chapters = chs;
+            this.chapters.sort((c1, c2) => c1.chapterNumber - c2.chapterNumber);
+          });
 
         this.courseService
           .getProgress(this.course.id, this.authService.userData.uid)

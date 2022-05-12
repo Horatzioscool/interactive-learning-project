@@ -24,6 +24,13 @@
     </ng-template>
   </p-listbox>
 </div>
+<div class="p-field">
+  <p-editor [(ngModel)]="newChapterDescription">
+  </p-editor>
+  <div>
+    {{newChapterDescription}}
+  </div>
+</div>
 <p-button (onClick)="created()">
   Submit
 </p-button>

@@ -19,6 +19,7 @@ export class CreateChapterComponent implements OnInit {
 
   public newChapter: CourseChapter = new CourseChapter();
   public newChapterTitle: string = '';
+  public newChapterDescription: string = '';
   public videoAttachment?: AttachmentInfo;
   public attachments: AttachmentInfo[] = [];
 
@@ -50,6 +51,7 @@ export class CreateChapterComponent implements OnInit {
 
   public created() {
     this.newChapter.title = this.newChapterTitle;
+    this.newChapter.description = this.newChapterDescription;
     this.newChapter.videoAttachmentId = this.videoAttachment?.id;
     this.newChapter.attachmentIds = this.attachments.map((a) => a.id);
     this.createdEvent.emit(this.newChapter);
