@@ -1,9 +1,10 @@
 <p-card [style]="stylepcard">
 
-  <div class="FirstPart">
+
   <h1>
     {{course.name}}
   </h1>
+  <p>{{course.description}}</p>
   <p-listbox [options]="chapters">
     <ng-template let-chapter pTemplate="item">
       <span>
@@ -11,9 +12,9 @@
       </span>
     </ng-template>
   </p-listbox>
-  </div>
 
-  <div class="SecondPart" *ngIf="!progress; else currentChapter">
+
+  <div *ngIf="!progress; else currentChapter">
 
     <p-button (onClick)="beginCourse()">
       Begin Course
@@ -22,7 +23,9 @@
 
   <ng-template #currentChapter >
     <div class="current">
-    <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
+      <div class="align">
+      <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
+      </div>
     <p-button  (onClick)="previousChapter()">
       Prev Chapter
     </p-button>
