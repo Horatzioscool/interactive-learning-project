@@ -1,0 +1,17 @@
+<div *ngIf="isChatStarted; else noChat">
+  Chat with {{authorName}}
+  <div>
+    <div *ngFor="let message of getMessages()">
+      <span *ngIf="message.isSender">Me: </span>
+      {{message.text}}
+    </div>
+  </div>
+
+  <input type="text" [(ngModel)]="newMessageText"/>
+  <button (click)="sendMessage()">Send Message</button>
+</div>
+<ng-template #noChat>
+<p-button (onClick)="startChat()">
+  Start Chat
+</p-button>
+</ng-template>

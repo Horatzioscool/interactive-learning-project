@@ -22,19 +22,16 @@
 
   <ng-template #currentChapter >
     <div class="current">
-      <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
-
+    <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
     <p-button  (onClick)="previousChapter()">
       Prev Chapter
     </p-button>
     <p-button  (onClick)="nextChapter()">
-      Next Chapter
+      Complete Chapter
     </p-button>
-    <p-button *ngIf="progress?.isCourseComplete" (onClick)="takeQuiz()">
-      Take Quiz
-    </p-button>
-
   </div>
   </ng-template>
-
+</p-card>
+<p-card *ngIf="!isEmpty">
+<app-course-chat [course]="course"></app-course-chat>
 </p-card>

@@ -11,5 +11,5 @@ export class CourseChat extends Entity {
 export interface ChatMessage {
   userId?: string;
   text?: string;
-  sendTime?: Date;
+  sendTime: Date;
 }

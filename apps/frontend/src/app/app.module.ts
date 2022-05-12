@@ -45,6 +45,8 @@ import { CreateChapterComponent } from './components/create-course/chapter-list-
 import { CourseDisplayComponent } from './components/course-display/course-display.component';
 import { CurrentChapterComponent } from './components/course-display/current-chapter/current-chapter.component';
 import {MenuModule} from "primeng/menu";
+import { CourseChatComponent } from './components/course-display/course-chat/course-chat.component';
+import { TeacherChatComponent } from './components/teacher-chat/teacher-chat.component';
 
 export const PrimeNgModules = [
   CardModule,
@@ -73,6 +75,8 @@ export const PrimeNgModules = [
     CreateChapterComponent,
     CourseDisplayComponent,
     CurrentChapterComponent,
+    CourseChatComponent,
+    TeacherChatComponent,
   ],
     imports: [
         BrowserModule,

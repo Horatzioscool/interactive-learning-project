@@ -21,7 +21,14 @@ export class CourseDisplayComponent implements OnInit {
   private courseEntityService: EntityService<Course>;
   private chapterService: EntityService<CourseChapter>;
   private courseeProgressService: EntityService<CourseeProgress>;
-  stylepcard={"height":"100%","width":"100%","background": 'url("https://i0.hippopx.com/photos/532/749/220/blue-sky-white-cloud-material-preview.jpg")','background-size':'cover',"positon":"fixed"}
+  stylepcard = {
+    height: '100%',
+    width: '100%',
+    background:
+      'url("https://i0.hippopx.com/photos/532/749/220/blue-sky-white-cloud-material-preview.jpg")',
+    'background-size': 'cover',
+    positon: 'fixed',
+  };
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -45,6 +52,7 @@ export class CourseDisplayComponent implements OnInit {
         throw new Error('courseId was null');
       }
       this.courseEntityService.getOneById(courseId).subscribe((c) => {
+        this.isEmpty = false;
         this.course = c;
         if (!this.course.chapterIds) throw new Error('chapterIds was null');
         this.chapterService
@@ -58,6 +66,7 @@ export class CourseDisplayComponent implements OnInit {
     });
   }
 
+  public isEmpty = true;
   public course: Course = Entity.Empty();
   public chapters: CourseChapter[] = [];
   public progress?: CourseeProgress;

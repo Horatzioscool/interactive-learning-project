@@ -3,5 +3,5 @@ export const Collections = {
   Attachement: 'attachements',
   CourseChapter: 'coursechapters',
   CourseeProgress: 'courseeprogress',
-  CouresChat: 'coursechat',
+  CourseChat: 'coursechat',
 };
