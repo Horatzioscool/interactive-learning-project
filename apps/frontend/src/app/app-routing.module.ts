@@ -12,19 +12,20 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { CreateCourseComponent } from './components/create-course/create-course.component';
 import { RoleGuard } from './shared/guard/role.guard';
 import { CourseDisplayComponent } from './components/course-display/course-display.component';
+import { TeacherChatComponent } from './components/teacher-chat/teacher-chat.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent },
+  { path: 'course-list', component: CourseListComponent },
   {
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: VerifyEmailComponent },
-  { path: 'course-list', component: CourseListComponent },
   {
     path: 'create-course',
     component: CreateCourseComponent,
@@ -34,6 +35,11 @@ const routes: Routes = [
     path: 'course/:id',
     component: CourseDisplayComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'teacher-chat',
+    component: TeacherChatComponent,
+    canActivate: [RoleGuard],
   },
 ];
 

@@ -43,12 +43,17 @@ import { ListboxModule } from 'primeng/listbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { ImageModule } from 'primeng/image';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { EditorModule } from 'primeng/editor';
+
 import { ChapterListEditorComponent } from './components/create-course/chapter-list-editor/chapter-list-editor.component';
 import { CreateChapterComponent } from './components/create-course/chapter-list-editor/create-chapter/create-chapter.component';
 import { CourseDisplayComponent } from './components/course-display/course-display.component';
 import { CurrentChapterComponent } from './components/course-display/current-chapter/current-chapter.component';
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { TeacherChatComponent } from './components/teacher-chat/teacher-chat.component';
+import { CourseChatComponent } from './components/course-display/course-chat/course-chat.component';
+import { CoursePreviewComponent } from './components/course-preview/course-preview.component';
 /* import {CardFancyExample } from "./components/common/card.component"; */
 
 export const UiComponentModules = [
@@ -64,6 +69,7 @@ export const UiComponentModules = [
   MatCardModule,
   MatButtonModule,
   MatProgressBarModule,
+  EditorModule,
 ];
 
 @NgModule({
@@ -82,7 +88,10 @@ export const UiComponentModules = [
     CourseDisplayComponent,
     CurrentChapterComponent,
     CourseCardComponent,
+    CourseChatComponent,
     NavigationComponent,
+    TeacherChatComponent,
+    CoursePreviewComponent,
   ],
   imports: [
     BrowserModule,

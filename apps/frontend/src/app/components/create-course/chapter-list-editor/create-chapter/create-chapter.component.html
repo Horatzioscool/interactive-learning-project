@@ -5,7 +5,7 @@
 <div class="p-field">
   <label>Video</label>
   <div *ngIf="videoAttachment; else attachVideo">
-    <label>{{videoAttachment.name}}</label>
+    <label >{{videoAttachment.name}}</label>
     <i class="pi pi-cross" (click)="videoAttachment = undefined"></i>
   </div>
   <ng-template #attachVideo>
@@ -23,6 +23,13 @@
       <i class="pi pi-cross" (click)="removeAttachment(attachment)"></i>
     </ng-template>
   </p-listbox>
+</div>
+<div class="p-field">
+  <p-editor [(ngModel)]="newChapterDescription">
+  </p-editor>
+  <div>
+    {{newChapterDescription}}
+  </div>
 </div>
 <p-button (onClick)="created()">
   Submit

@@ -21,6 +21,7 @@ export class CourseDisplayComponent implements OnInit {
   private courseEntityService: EntityService<Course>;
   private chapterService: EntityService<CourseChapter>;
   private courseeProgressService: EntityService<CourseeProgress>;
+  stylepcard = { height: '100%', width: '100%', 'text-align': 'center' };
   constructor(
     private activatedRoute: ActivatedRoute,
     entityServiceFactory: EntityServiceFactory,
@@ -43,11 +44,15 @@ export class CourseDisplayComponent implements OnInit {
         throw new Error('courseId was null');
       }
       this.courseEntityService.getOneById(courseId).subscribe((c) => {
+        this.isEmpty = false;
         this.course = c;
         if (!this.course.chapterIds) throw new Error('chapterIds was null');
         this.chapterService
           .getManyById(this.course.chapterIds)
-          .subscribe((chs) => (this.chapters = chs));
+          .subscribe((chs) => {
+            this.chapters = chs;
+            this.chapters.sort((c1, c2) => c1.chapterNumber - c2.chapterNumber);
+          });
 
         this.courseService
           .getProgress(this.course.id, this.authService.userData.uid)
@@ -56,6 +61,7 @@ export class CourseDisplayComponent implements OnInit {
     });
   }
 
+  public isEmpty = true;
   public course: Course = Entity.Empty();
   public chapters: CourseChapter[] = [];
   public progress?: CourseeProgress;

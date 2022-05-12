@@ -25,7 +25,6 @@ export class CurrentChapterComponent implements OnInit {
 
   public videoAttachment: Attachment = Attachment.Empty();
   public videoUrl: string = '';
-
   ngOnInit(): void {
     if (!this.chapter.videoAttachmentId)
       throw new Error('videoAttachmentId was null');
