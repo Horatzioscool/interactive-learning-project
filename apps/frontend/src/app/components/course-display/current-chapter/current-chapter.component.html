@@ -1,7 +1,8 @@
 <div style="display: flex; flex-direction: row;">
-    <h1>{{chapter.title}}</h1>
-  <video width="400px" height="400px"  [src]="this.videoAttachment.downloadURL" controls>
+
+  <video  style="overflow-y:hidden;max-height:900px;max-width:1100px;padding:10px; "  [src]="this.videoAttachment.downloadURL" controls>
 </video>
-  <div [innerHTML]="chapter.description" style="overflow: scroll; max-height: 400px;">
-  </div>
+
+</div>
+<div [innerHTML]="chapter.description" style="overflow: hidden;padding:0 10px; max-height: 400px;">
 </div>

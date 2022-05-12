@@ -1,17 +1,12 @@
 <app-navigation></app-navigation>
-<p-card [style]="stylepcard">
+<div [style]="stylepcard">
+  <div class="First">
   <h1>
     {{course.name}}
   </h1>
   <p>{{course.description}}</p>
-  <p-listbox [options]="chapters">
-    <ng-template let-chapter pTemplate="item">
-      <span>
-        {{chapter.title}}
-      </span>
-    </ng-template>
-  </p-listbox>
 
+  </div>
 
   <div *ngIf="!progress; else currentChapter">
 
@@ -21,22 +16,32 @@
   </div>
 
   <ng-template #currentChapter >
-    <div class="current">
-      <div class="align">
+    <div class="current" style="display:flex">
+      <div class="align" style="flex:70%;overflow-y:hidden">
+        <button pButton type="button" style="background-color:white;margin-left:20px;border-right-color:black "  class="p-button-text"  (onClick)="previousChapter()">
+          Prev Chapter
+        </button>
+        <button  pButton  style="background-color:white;border-left-color:black " class="p-button-text" (onClick)="nextChapter()">
+          Complete Chapter
+        </button>
       <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
+
+
       </div>
-    <p-button  (onClick)="previousChapter()">
-      Prev Chapter
-    </p-button>
-    <p-button  (onClick)="nextChapter()">
-      Complete Chapter
-    </p-button>
-  </div>
+
+    <div class="third" style="flex:30%;float:right">
+      <div *ngIf="!isEmpty">
+        <app-course-chat [course]="course"></app-course-chat>
+        <p-listbox [options]="chapters">
+          <ng-template let-chapter pTemplate="item">
+      <span>
+        {{chapter.title}}
+      </span>
+          </ng-template>
+        </p-listbox>
+      </div>
+    </div>
+    </div>
   </ng-template>
-</p-card>
-<div style="height: 300px">
 
 </div>
-<p-card *ngIf="!isEmpty">
-  <app-course-chat [course]="course"></app-course-chat>
-</p-card>

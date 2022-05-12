@@ -21,7 +21,7 @@ export class CourseDisplayComponent implements OnInit {
   private courseEntityService: EntityService<Course>;
   private chapterService: EntityService<CourseChapter>;
   private courseeProgressService: EntityService<CourseeProgress>;
-  stylepcard = { height: '100%', width: '100%', 'text-align': 'center' };
+  stylepcard = { height: '100%', width: '100%' };
   constructor(
     private activatedRoute: ActivatedRoute,
     entityServiceFactory: EntityServiceFactory,
