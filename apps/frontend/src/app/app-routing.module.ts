@@ -15,7 +15,7 @@ import { CourseDisplayComponent } from './components/course-display/course-displ
 import { TeacherChatComponent } from './components/teacher-chat/teacher-chat.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
