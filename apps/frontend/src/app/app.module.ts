@@ -53,6 +53,8 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { TeacherChatComponent } from './components/teacher-chat/teacher-chat.component';
 import { CourseChatComponent } from './components/course-display/course-chat/course-chat.component';
+import { CoursePreviewComponent } from './components/course-preview/course-preview.component';
+/* import {CardFancyExample } from "./components/common/card.component"; */
 
 export const UiComponentModules = [
   CardModule,
@@ -89,6 +91,7 @@ export const UiComponentModules = [
     CourseChatComponent,
     NavigationComponent,
     TeacherChatComponent,
+    CoursePreviewComponent,
   ],
   imports: [
     BrowserModule,
