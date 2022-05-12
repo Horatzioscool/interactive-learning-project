@@ -31,6 +31,9 @@
     <p-button  (onClick)="nextChapter()">
       Complete Chapter
     </p-button>
+    <a *ngIf="progress?.isCourseComplete" [href]="course.quizUrl">
+      Take Quiz
+    </a>
   </div>
   </ng-template>
 </p-card>
