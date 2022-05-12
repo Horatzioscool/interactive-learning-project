@@ -44,6 +44,7 @@ import { ChapterListEditorComponent } from './components/create-course/chapter-l
 import { CreateChapterComponent } from './components/create-course/chapter-list-editor/create-chapter/create-chapter.component';
 import { CourseDisplayComponent } from './components/course-display/course-display.component';
 import { CurrentChapterComponent } from './components/course-display/current-chapter/current-chapter.component';
+import {MenuModule} from "primeng/menu";
 
 export const PrimeNgModules = [
   CardModule,
@@ -73,20 +74,21 @@ export const PrimeNgModules = [
     CourseDisplayComponent,
     CurrentChapterComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
-    AppRoutingModule,
-    FormsModule,
-    CommonModule,
-    HttpClientModule,
-    ...PrimeNgModules,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireAuthModule,
+        AngularFirestoreModule,
+        AngularFireStorageModule,
+        AngularFireDatabaseModule,
+        AppRoutingModule,
+        FormsModule,
+        CommonModule,
+        HttpClientModule,
+        ...PrimeNgModules,
+        MenuModule,
+    ],
   providers: [AuthService, EntityServiceFactory],
   bootstrap: [AppComponent],
 })

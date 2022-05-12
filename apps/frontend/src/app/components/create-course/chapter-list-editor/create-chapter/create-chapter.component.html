@@ -5,7 +5,7 @@
 <div class="p-field">
   <label>Video</label>
   <div *ngIf="videoAttachment; else attachVideo">
-    <label>{{videoAttachment.name}}</label>
+    <label >{{videoAttachment.name}}</label>
     <i class="pi pi-cross" (click)="videoAttachment = undefined"></i>
   </div>
   <ng-template #attachVideo>
