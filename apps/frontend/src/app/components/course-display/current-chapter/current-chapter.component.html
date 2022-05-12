@@ -1,10 +1,7 @@
-<p-divider>
-  <div>
-      <h1>{{chapter.title}}</h1>
-
-    <p-divider>
-    <video width="400px" height="400px"  [src]="this.videoAttachment.downloadURL" controls>
-  </video>
-    </p-divider>
+<div style="display: flex; flex-direction: row;">
+    <h1>{{chapter.title}}</h1>
+  <video width="400px" height="400px"  [src]="this.videoAttachment.downloadURL" controls>
+</video>
+  <div [innerHTML]="chapter.description" style="overflow: scroll; max-height: 400px;">
   </div>
-</p-divider>
+</div>
