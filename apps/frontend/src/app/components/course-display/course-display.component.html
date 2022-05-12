@@ -1,4 +1,6 @@
-<p-card>
+<p-card [style]="stylepcard">
+
+  <div class="FirstPart">
   <h1>
     {{course.name}}
   </h1>
@@ -9,22 +11,30 @@
       </span>
     </ng-template>
   </p-listbox>
+  </div>
 
-  <div *ngIf="!progress; else currentChapter">
+  <div class="SecondPart" *ngIf="!progress; else currentChapter">
+
     <p-button (onClick)="beginCourse()">
       Begin Course
     </p-button>
   </div>
-  <ng-template #currentChapter>
-    <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
-    <p-button (onClick)="previousChapter()">
+
+  <ng-template #currentChapter >
+    <div class="current">
+      <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
+
+    <p-button  (onClick)="previousChapter()">
       Prev Chapter
     </p-button>
-    <p-button (onClick)="nextChapter()">
+    <p-button  (onClick)="nextChapter()">
       Next Chapter
     </p-button>
     <p-button *ngIf="progress?.isCourseComplete" (onClick)="takeQuiz()">
       Take Quiz
     </p-button>
+
+  </div>
   </ng-template>
+
 </p-card>
