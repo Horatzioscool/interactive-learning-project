@@ -2,6 +2,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Lora&family=Oxygen:wght@300;400&display=swap');
 </style>
+<app-navigation></app-navigation>
   <div class="introduction wf-section">
     <div class="subtitle">
       Evolving today
@@ -9,7 +10,7 @@
     <div class="subheading">
       A platform brought to you by your universitiy so you always have access to your courses
     </div>
-    <a href="#Latest-post" style="opacity: 1;" class="button">View Latest Courses</a>
+    <a href="#referance" style="opacity: 1;" class="button">View Latest Courses</a>
     </div>
     <div id="posts" class="main-section bottom-padding wf-section">
       <div id="Latest-post" class="w-container">
@@ -17,29 +18,21 @@
           <h2 class="section-title">Featured Courses</h2>
           <div class="divider"></div>
         </div>
-        <div class="w-dyn-list">
+        <div class="list">
           <div *ngFor="let course of courses.slice(2,4)">
-            <div>
-              {{course.name}} 
-            </div>
+              <app-course-preview></app-course-preview>
           </div> 
         </div>
       </div>
-    <div class="w-container">
-      <div class="section-heading">
+    <div id="referance" class="w-container">
+      <div  class="section-heading">
         <h2 class="section-title">Most Recent</h2>
         <div class="divider"></div>
       </div>
-    <div class="w-dyn-list">
-    <div role="list" class="w-clearfix w-dyn-items w-row">
-      <div role="listitem" class="blog-thumbnail ">
-        <div *ngFor="let course of courses.slice(0,6)">
-          <div>
-           {{course.name}} 
-          </div>
+    <div class="list2">
+        <div *ngFor="let course of courses.slice(0,6)" class="listitem">
+          <app-course-preview ></app-course-preview>
         </div> 
-      </div>
-    </div>
   </div>
 </div>
 

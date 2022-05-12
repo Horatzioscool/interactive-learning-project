@@ -13,7 +13,7 @@ export class CourseCardComponent implements OnInit {
   @Input('courseChapter') public chapter!: CourseChapter;
 
   public courseProgress: number = 0;
-
+  
   constructor(public router: Router) {}
 
   ngOnInit(): void {

@@ -49,6 +49,7 @@ import { CourseDisplayComponent } from './components/course-display/course-displ
 import { CurrentChapterComponent } from './components/course-display/current-chapter/current-chapter.component';
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { CoursePreviewComponent } from './components/course-preview/course-preview.component';
 /* import {CardFancyExample } from "./components/common/card.component"; */
 
 export const UiComponentModules = [
@@ -83,6 +84,7 @@ export const UiComponentModules = [
     CurrentChapterComponent,
     CourseCardComponent,
     NavigationComponent,
+    CoursePreviewComponent,
   ],
   imports: [
     BrowserModule,
