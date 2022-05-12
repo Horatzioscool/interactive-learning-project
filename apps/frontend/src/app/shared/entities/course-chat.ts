@@ -2,6 +2,7 @@ import { Entity } from './entity';
 
 export class CourseChat extends Entity {
   courseId?: string;
+  authorId?: string;
   courseeId?: string;
 
   messages: ChatMessage[] = [];
