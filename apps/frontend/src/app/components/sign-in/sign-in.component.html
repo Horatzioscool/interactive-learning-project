@@ -1,7 +1,11 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lora&family=Oxygen:wght@300;400&display=swap');
+</style>
 <div class="displayTable">
   <div class="displayTableCell">
     <div class="authBlock">
-      <h3>Sign In</h3>
+      <h3 class="subheading">Sign In</h3>
       <div class="formGroup">
         <input
           type="text"
@@ -49,19 +53,21 @@
       </div>
 
       <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
+        <span routerLink="/forgot-password" class="resetPassword">Forgot Password?</span>
       </div>
+
+      <div class="redirectToLogin">
+      <span
+      >Don't have an account?  <span
+        class="redirect"
+        routerLink="/register-user"
+      >
+          Sign Up Here</span
+      ></span
+      >
+      </div>
+
     </div>
 
-    <div class="redirectToLogin">
-      <span
-        >Don't have an account?<span
-          class="redirect"
-          routerLink="/register-user"
-        >
-          Sign Up</span
-        ></span
-      >
-    </div>
   </div>
 </div>
