@@ -1,5 +1,5 @@
-<div *ngIf="isChatStarted; else noChat">
-  Chat with {{authorName}}
+<div style="margin-bottom: 20px" *ngIf="isChatStarted; else noChat">
+ <h1 > Chat with {{authorName}}</h1>
   <div>
     <div *ngFor="let message of getMessages()">
       <span *ngIf="message.isSender">Me: </span>
@@ -7,11 +7,13 @@
     </div>
   </div>
 
-  <input type="text" [(ngModel)]="newMessageText"/>
-  <button (click)="sendMessage()">Send Message</button>
+  <input type="text" pInputText class="p-inputtext-mm" [(ngModel)]="newMessageText"/>
+  <p-button (click)="sendMessage()" icon=" pi pi-send"></p-button>
 </div>
 <ng-template #noChat>
-<button (onClick)="startChat()">
+  <div style="margin-bottom: 30px">
+<p-button (onClick)="startChat()" >
   Start Chat
-</button>
+</p-button>
+  </div>
 </ng-template>
