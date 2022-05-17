@@ -10,12 +10,12 @@
 
   <div *ngIf="!progress; else currentChapter">
 
-    <p-button (onClick)="beginCourse()">
+    <p-button (click)="beginCourse()">
       Begin Course
     </p-button>
   </div>
 
-  <ng-template #currentChapter >
+  <ng-template #currentChapter>
     <div class="current" style="display:flex">
       <div class="align" style="flex:70%;overflow-y:hidden">
         <div >
@@ -27,19 +27,17 @@
       <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
 
       </div>
-<<<<<<< HEAD
-    <p-button  (onClick)="previousChapter()">
+
+    <p-button  (click)="previousChapter()">
       Prev Chapter
     </p-button>
-    <p-button  (onClick)="nextChapter()">
+    <p-button  (click)="nextChapter()">
       Complete Chapter
     </p-button>
     <a *ngIf="progress?.isCourseComplete" [href]="course.quizUrl">
       Take Quiz
     </a>
   </div>
-=======
-
     <div class="third" style="flex:30%;float:right">
       <div *ngIf="!isEmpty">
         <app-course-chat [course]="course"></app-course-chat>
@@ -51,13 +49,8 @@
           </ng-template>
         </p-listbox>
       </div>
-    </div>
-    </div>
-<<<<<<< HEAD
->>>>>>> 7195ef4 (very many style changes)
-=======
 
->>>>>>> afb097b (attachment div in course page with mockups)
+    </div>
   </ng-template>
 
 </div>
