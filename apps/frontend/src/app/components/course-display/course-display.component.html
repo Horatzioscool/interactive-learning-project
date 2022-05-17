@@ -4,7 +4,7 @@
   <h1>
     {{course.name}}
   </h1>
-  <p>{{course.description}}</p>
+  <p [innerHTML]="course.description"></p>
 
   </div>
 
@@ -18,15 +18,13 @@
   <ng-template #currentChapter >
     <div class="current" style="display:flex">
       <div class="align" style="flex:70%;overflow-y:hidden">
-        <button pButton type="button" style="background-color:white;margin-left:20px;border-right-color:black "  class="p-button-text"  (onClick)="previousChapter()">
+        <button pButton type="button" style="background-color:white;margin-left:20px;border-right-color:black "  class="p-button-text"  (click)="previousChapter()">
           Prev Chapter
         </button>
-        <button  pButton  style="background-color:white;border-left-color:black " class="p-button-text" (onClick)="nextChapter()">
+        <button  pButton  style="background-color:white;border-left-color:black " class="p-button-text" (click)="nextChapter()">
           Complete Chapter
         </button>
-      <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
-
-
+        <app-current-chapter [currentChapter]="getCurrentChapter"></app-current-chapter>
       </div>
 
     <div class="third" style="flex:30%;float:right">

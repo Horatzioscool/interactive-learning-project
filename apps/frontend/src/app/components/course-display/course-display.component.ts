@@ -75,7 +75,8 @@ export class CourseDisplayComponent implements OnInit {
     this.courseeProgressService.add(newProgress);
     this.progress = newProgress;
   }
-  public getCurrentChapter() {
+
+  public get getCurrentChapter() {
     if (!this.progress) throw new Error('Progress was undefined!');
     const id = this.progress.currentChapterId;
     const chapter = this.chapters.find((c) => c.id == id);
