@@ -16,40 +16,34 @@
   </div>
 
   <ng-template #currentChapter>
+    <div>
+      <button pButton type="button" style="background-color:white;margin-left:20px;border:3px solid dodgerblue "icon="pi pi-caret-left"  class="p-button-text"  (click)="previousChapter()">
+      </button>
+      <button  pButton  style="background-color:white;border:3px solid dodgerblue " icon="pi pi-caret-right" class="p-button-text" (click)="nextChapter()">
+      </button>
+    </div>
     <div class="current" style="display:flex">
       <div class="align" style="flex:70%;overflow-y:hidden">
-        <div >
-        <button pButton type="button" style="background-color:white;margin-left:20px;border:3px solid dodgerblue "icon="pi pi-caret-left"  class="p-button-text"  (click)="previousChapter()">
-        </button>
-        <button  pButton  style="background-color:white;border:3px solid dodgerblue " icon="pi pi-caret-right" class="p-button-text" (click)="nextChapter()">
-        </button>
-        </div>
-      <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
+        
+        <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
 
       </div>
 
-    <p-button  (click)="previousChapter()">
-      Prev Chapter
-    </p-button>
-    <p-button  (click)="nextChapter()">
-      Complete Chapter
-    </p-button>
+    <div class="third" style="flex:30%;float:right; margin-top: 10px;">
+      <div *ngIf="!isEmpty">
+        <p-listbox [options]="chapters">
+          <ng-template let-chapter pTemplate="item">
+            <span>{{chapter.title}}</span>
+          </ng-template>
+        </p-listbox>
+        <app-course-chat [course]="course"></app-course-chat>
+      </div>
+    </div>
     <a *ngIf="progress?.isCourseComplete" [href]="course.quizUrl">
       Take Quiz
     </a>
   </div>
-    <div class="third" style="flex:30%;float:right">
-      <div *ngIf="!isEmpty">
-        <app-course-chat [course]="course"></app-course-chat>
-        <p-listbox [options]="chapters">
-          <ng-template let-chapter pTemplate="item">
-      <span>
-        {{chapter.title}}
-      </span>
-          </ng-template>
-        </p-listbox>
-      </div>
-    </div>
+    
   </ng-template>
 
 </div>

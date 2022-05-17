@@ -1,23 +1,19 @@
 <div style="display: flex; flex-direction: row;">
 
-  <video  style="overflow-y:hidden;max-height:900px;max-width:1100px;padding:10px; "  [src]="this.videoAttachment.downloadURL" controls>
+  <video  style="overflow-y:hidden;max-height:800px;max-width:1000px;padding:10px; "  [src]="this.videoAttachment.downloadURL" controls>
 </video>
 
 </div>
-<<<<<<< HEAD
-<div [innerHTML]="chapter.description" style="overflow: hidden;padding:0 10px; max-height: 400px;">
-=======
 
 <h2 style="padding-top:20px">{{chapter.title}}</h2>
 <div [innerHTML]="chapter.description" style="overflow: hidden;padding:0 10px; max-height: 800px;">
 </div>
 <div *ngIf="Attachments!=[]">
 <div class="row" style="max-width:40%;margin-bottom:20px" >
-  <div style="text-align: center" >
+  <div style="text-align: left" >
     <h2>{{this.num}} Attachments</h2>
     Click on the icon to see the attachment
   </div>
->>>>>>> 5763b5771b5cfea5429eeb1cffd7ae08655612db
 </div>
 
 <div class="list" style="display:flex">
