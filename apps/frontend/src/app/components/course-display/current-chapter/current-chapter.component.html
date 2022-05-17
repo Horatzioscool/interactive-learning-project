@@ -8,3 +8,17 @@
 <h2 style="padding-top:20px">{{chapter.title}}</h2>
 <div [innerHTML]="chapter.description" style="overflow: hidden;padding:0 10px; max-height: 800px;">
 </div>
+<div *ngIf="Attachments!=[]">
+<div class="row" style="max-width:40%;margin-bottom:20px" >
+  <div style="text-align: center" >
+    <h2>{{this.num}} Attachments</h2>
+    Click on the icon to see the attachment
+  </div>
+</div>
+
+<div class="list" style="display:flex">
+  <div *ngFor="let attachment of Attachments" style="padding:10px">
+    <app-document-preview [id]="attachment.id"></app-document-preview>
+  </div>
+</div>
+</div>
