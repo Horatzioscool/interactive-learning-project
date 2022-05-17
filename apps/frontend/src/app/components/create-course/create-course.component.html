@@ -1,25 +1,27 @@
 <app-navigation></app-navigation>
-<p-card class="create-card">
-  <div class="w-col w-col-0">
-      <h3>Create a course</h3>
+<div class="introduction wf-section">
+  <div class="create-card">
+    <div class="w-col w-col-0">
+        <h3>Create a course</h3>
+    </div>
+    <div class="p-field">
+      <label class="field-label" for="course-name">Course Name</label>
+      <input class="contact-field w-input" id="course-name" pInputText [(ngModel)]="newCourse.name" placeholder="Interactive learning" required minlength="5"/>
+    </div>
+    <div class="p-field">
+      <label class="field-label" for="course-description">Course Description</label>
+      <textarea class="contact-field message w-input" id="course-description" pInputTextArea [(ngModel)]="newCourse.description" placeholder="This course studies interactive learning...." required></textarea>
+    </div>
+    <p-divider></p-divider>
+    <app-chapter-list-editor #chapterList></app-chapter-list-editor>
+    <p-divider></p-divider>
+    <div class="p-field">
+      <label class="field-label" for="quiz-url">Quiz Url</label>
+      <input class="contact-field w-input" id="quiz-url" pInputText [(ngModel)]="newCourse.quizUrl" placeholder="www.quizzes.com/?241244" required/>
+    </div>
+    <button class="button w-button" (onClick)="createCourse()">
+      Submit
+    </button>
   </div>
-  <div class="p-field">
-    <label class="field-label" for="course-name">Course Name</label>
-    <input class="contact-field w-input" id="course-name" pInputText [(ngModel)]="newCourse.name" required minlength="5"/>
-  </div>
-  <div class="p-field">
-    <label class="field-label" for="course-description">Course Description</label>
-    <textarea class="contact-field message w-input" id="course-description" pInputTextArea [(ngModel)]="newCourse.description" required></textarea>
-  </div>
-  <p-divider></p-divider>
-  <app-chapter-list-editor #chapterList></app-chapter-list-editor>
-  <p-divider></p-divider>
-  <div class="p-field">
-    <label class="field-label" for="quiz-url">Quiz Url</label>
-    <input class="contact-field w-input" id="quiz-url" pInputText [(ngModel)]="newCourse.quizUrl" required/>
-  </div>
-  <button class="button w-button" (onClick)="createCourse()">
-    Submit
-  </button>
-</p-card>
+</div>
 

@@ -149,9 +149,9 @@
     margin:15px;
   }
   .create-card {
-    width: 60%;
-    margin: 10% auto 0;
-    background: rgb(139, 133, 133);
+    width: 99%;
+    margin: 1% auto 0;
+    background: rgb(193, 172, 155);
   }
   /* Generated on: Thu Apr 14 2022 08:47:50 GMT+0000 (Coordinated Universal Time) */
 /* ==========================================================================
@@ -1012,12 +1012,14 @@ img {
   height: 50px;
   padding-bottom: 9px;
   border-radius: 2px;
+  background: rgb(196, 178, 163);
   font-family: Oxygen, sans-serif;
 }
 
 .contact-field:focus {
   border: 1px solid #5cc489;
   color: #243039;
+  background: rgb(194, 180, 168);
 }
 
 .contact-field.message {
@@ -1431,4 +1433,154 @@ img {
   .success-text {
     line-height: 27px;
   }
+}
+.first{
+  font-family: Harlow Solid Italic;
+  font-size:30px;
+ text-align:center;
+  margin-bottom: 60px;
+  color:white;
+
+
+}
+.up{
+  display:block;
+  background:url("https://elearningindustry.com/wp-content/uploads/2019/09/online-courses-what-students-want.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.introduction {
+  position: relative;
+  height: 1500px;
+  padding-top: 184px;
+  background-color: aqua;
+  background: linear-gradient(135deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%),url("https://elearningindustry.com/wp-content/uploads/2019/09/online-courses-what-students-want.jpg");
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+}
+.hero-content {
+  text-align: center;
+}
+.w-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+}
+.w-container:before, .w-container:after {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+.w-container:after {
+  clear: both;
+}
+.subtitle {
+  font-size: 2em;
+  color: #fff;
+  font-family: Lora,sans-serif;
+}
+.subheading {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  font-family: Oxygen, sans-serif;
+  color: hsla(0, 0%, 100%, 0.63);
+  font-size: 18px;
+  font-weight: 300;
+}
+.introduction{
+  padding: 120px;
+  text-align: center;
+}
+.button {
+  padding: 12px 31px;
+  border-radius: 3px;
+  background-color: #202f9c;
+  -webkit-transition: background-color 200ms ease, color 200ms ease;
+  transition: background-color 200ms ease, color 200ms ease;
+  font-family: Oxygen, sans-serif;
+  color: #fff;
+  font-weight: 300;
+  padding: 9px 15px;
+  color: white;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover{
+  background-color: orange;
+}
+.main-section .bottom-padding {
+  padding-top: 20px;
+  padding-bottom: 89px;
+}
+.main-section{
+  background-color: #f7f7f7;
+  font-family: Lora,sans-serif;
+  
+}
+.section-heading{
+  text-align: center;
+}
+.section-title {
+  margin-top: 60px;
+  font-size: 25px;
+  line-height: 27px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-family: Oxygen, sans-serif;
+  color: #2e2e2e;
+}
+.divider {
+  display: block;
+  width: 20%;
+  height: 1px;
+  margin: 16px auto;
+  background-color: #dedede;
+  list-style-type: lower-alpha;
+}
+
+
+.buttons{
+  text-align:end;
+
+}
+.upper{
+  background-color:transparent;
+  border:none;
+}
+.addh{
+  font-size: medium;
+  font-family: Verdana, serif, "Harlow Solid Italic";
+}
+.add{
+  width:300px;
+  border:3px solid black;
+  move-right:100px;
+}
+.addbtn{
+  border: none;
+  background-color:transparent ;
+}
+.addbtn:hover{
+  color:teal;
+}
+.name{
+ font-size:small;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.list2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.listitem {
+  flex:45%;
+  margin:15px;
 }
