@@ -4,5 +4,5 @@ export class CourseeProgress extends Entity {
   courseeId?: string;
 
   currentChapterId?: string;
-  isCourseComplete?: boolean;
+  isCourseComplete: boolean = false;
 }
