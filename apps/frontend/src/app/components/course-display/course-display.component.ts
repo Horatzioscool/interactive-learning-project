@@ -90,6 +90,7 @@ export class CourseDisplayComponent implements OnInit {
     const nextIndex = index + 1;
     if (nextIndex == this.chapters.length) {
       this.progress.isCourseComplete = true;
+      this.courseeProgressService.update(this.progress);
     } else {
       this.progress.currentChapterId = this.chapters[nextIndex].id;
       this.courseeProgressService.update(this.progress);

@@ -5,7 +5,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-
+import {DocumentViewerComponent} from "./components/DocumentViewer/documentviewer.component";
 // route guard
 import { AuthGuard } from './shared/guard/auth.guard';
 import { CourseListComponent } from './components/course-list/course-list.component';
@@ -13,6 +13,7 @@ import { CreateCourseComponent } from './components/create-course/create-course.
 import { RoleGuard } from './shared/guard/role.guard';
 import { CourseDisplayComponent } from './components/course-display/course-display.component';
 import { TeacherChatComponent } from './components/teacher-chat/teacher-chat.component';
+import {SafePipe} from "./components/DocumentViewer/SafePipe";
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -41,6 +42,13 @@ const routes: Routes = [
     component: TeacherChatComponent,
     canActivate: [RoleGuard],
   },
+  {
+    path:'document/:id',
+    component:DocumentViewerComponent,
+    canActivate:[AuthGuard]
+  },
+  {path:'SafePipe',
+  component:SafePipe}
 ];
 
 @NgModule({

@@ -10,25 +10,34 @@
 
   <div *ngIf="!progress; else currentChapter">
 
-    <p-button (onClick)="beginCourse()">
+    <p-button (click)="beginCourse()">
       Begin Course
     </p-button>
   </div>
 
-  <ng-template #currentChapter >
+  <ng-template #currentChapter>
     <div class="current" style="display:flex">
       <div class="align" style="flex:70%;overflow-y:hidden">
-        <button pButton type="button" style="background-color:white;margin-left:20px;border-right-color:black "  class="p-button-text"  (onClick)="previousChapter()">
-          Prev Chapter
+        <div >
+        <button pButton type="button" style="background-color:white;margin-left:20px;border:3px solid dodgerblue "icon="pi pi-caret-left"  class="p-button-text"  (click)="previousChapter()">
         </button>
-        <button  pButton  style="background-color:white;border-left-color:black " class="p-button-text" (onClick)="nextChapter()">
-          Complete Chapter
+        <button  pButton  style="background-color:white;border:3px solid dodgerblue " icon="pi pi-caret-right" class="p-button-text" (click)="nextChapter()">
         </button>
+        </div>
       <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
-
 
       </div>
 
+    <p-button  (click)="previousChapter()">
+      Prev Chapter
+    </p-button>
+    <p-button  (click)="nextChapter()">
+      Complete Chapter
+    </p-button>
+    <a *ngIf="progress?.isCourseComplete" [href]="course.quizUrl">
+      Take Quiz
+    </a>
+  </div>
     <div class="third" style="flex:30%;float:right">
       <div *ngIf="!isEmpty">
         <app-course-chat [course]="course"></app-course-chat>
@@ -40,7 +49,6 @@
           </ng-template>
         </p-listbox>
       </div>
-    </div>
     </div>
   </ng-template>
 
