@@ -6,7 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -68,7 +72,11 @@ export const UiComponentModules = [
   InputTextareaModule,
   MatCardModule,
   MatButtonModule,
+  MatToolbarModule,
+  MatFormFieldModule,
+  MatButtonToggleModule,
   MatProgressBarModule,
+  MatInputModule,
   EditorModule,
 ];
 

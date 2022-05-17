@@ -1,36 +1,40 @@
-<div class="p-field">
-  <label for="chapter-title">Chapter Title</label>
-  <input id="chapter-title" pInputText [(ngModel)]="newChapterTitle"/>
-</div>
-<div class="p-field">
-  <label>Video</label>
-  <div *ngIf="videoAttachment; else attachVideo">
-    <label >{{videoAttachment.name}}</label>
-    <i class="pi pi-cross" (click)="videoAttachment = undefined"></i>
+<p-card>
+  <div class="p-field">
+    <label class="field-label"  for="chapter-title">Chapter Title</label>
+    <input input class="contact-field w-input" id="chapter-title" pInputText [(ngModel)]="newChapterTitle" required/>
   </div>
-  <ng-template #attachVideo>
-    <app-attach (attached)="videoAttached($event)" [isVideoOnly]="true"></app-attach>
-  </ng-template>
-</div>
-<div class="p-field">
-  <label>Attachments</label>
-  <app-attach (attached)="addedAttachment($event)"></app-attach>
-  <p-listbox [options]="attachments" optionLabel="name">
-    <ng-template let-attachment pTemplate="item">
-      <span>
-        {{attachment.name}}
-      </span>
-      <i class="pi pi-cross" (click)="removeAttachment(attachment)"></i>
+  <div class="p-field">
+    <label class="field-label" >Video</label>
+    <div *ngIf="videoAttachment; else attachVideo">
+      <label class="field-label" >{{videoAttachment.name}}</label>
+      <i class="pi pi-cross" (click)="videoAttachment = undefined"></i>
+    </div>
+    <ng-template #attachVideo>
+      <app-attach (attached)="videoAttached($event)" [isVideoOnly]="true"></app-attach>
     </ng-template>
-  </p-listbox>
-</div>
-<div class="p-field">
-  <p-editor [(ngModel)]="newChapterDescription">
-  </p-editor>
-  <div>
-    {{newChapterDescription}}
   </div>
-</div>
-<p-button (onClick)="created()">
-  Submit
-</p-button>
+  <div class="p-field">
+    <label class="field-label" >Attachments</label>
+    <app-attach (attached)="addedAttachment($event)"></app-attach>
+    <p-listbox [options]="attachments" optionLabel="name">
+      <ng-template let-attachment pTemplate="item">
+        <span>
+          {{attachment.name}}
+        </span>
+        <i class="pi pi-cross" (click)="removeAttachment(attachment)"></i>
+      </ng-template>
+    </p-listbox>
+  </div>
+  <div class="p-field">
+    <p-editor [(ngModel)]="newChapterDescription">
+    </p-editor>
+    <div>
+      {{newChapterDescription}}
+    </div>
+  </div>
+
+  <button class="button" (onClick)="created()">
+    Submit
+  </button>
+
+</p-card>
