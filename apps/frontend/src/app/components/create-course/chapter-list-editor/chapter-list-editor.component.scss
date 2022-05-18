@@ -1,0 +1,28 @@
+.field-label {
+    font-family: Oxygen, sans-serif;
+    font-weight: 400;
+    }
+.contact-field {
+        height: 50px;
+        padding-bottom: 9px;
+        border-radius: 2px;
+        background: rgb(255, 255, 255);
+        font-family: Oxygen, sans-serif;
+      }
+      
+.contact-field:focus {
+        border: 1px solid #5cc489;
+        color: #243039;
+        background: rgb(247, 247, 247);
+      }
+      
+.contact-field.message {
+        height: 150px;
+}
+
+.listbg{
+  background: rgb(247, 247, 247);
+}
+.p-element{
+  background: rgb(247, 247, 247);
+}
