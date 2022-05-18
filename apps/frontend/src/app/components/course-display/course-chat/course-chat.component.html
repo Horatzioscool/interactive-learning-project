@@ -14,11 +14,11 @@
   </div>
 <div class="chat-input">
   <input type="text" pInputText class="p-inputtext-mm message-input" [(ngModel)]="newMessageText"/>
-  <p-button (click)="sendMessage()" icon="pi pi-send"></p-button>
+  <p-button (click)="sendMessage()" icon="pi pi-send" class="send-btn"></p-button>
 </div>
 </div>
 <ng-template #noChat>
-  <div style="margin-top:50%;float:right;">
+  <div class="start-btn">
     <p-button (click)="startChat()" >Start Chat</p-button>
   </div>
 </ng-template>
