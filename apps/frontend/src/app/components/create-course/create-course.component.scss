@@ -16,7 +16,7 @@
   .introduction {
     position: relative;
     height: 500px;
-    padding-top: 184px;
+    padding-top: 18px;
     background-color: aqua;
     background: linear-gradient(135deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%),url("https://elearningindustry.com/wp-content/uploads/2019/09/online-courses-what-students-want.jpg");
     background-position: 0px 0px, 50% 50%;
@@ -150,7 +150,6 @@
   }
   .create-card {
     width: 99%;
-    margin: 1% auto 0;
     background: rgb(247, 247, 247);
   }
   /* Generated on: Thu Apr 14 2022 08:47:50 GMT+0000 (Coordinated Universal Time) */
@@ -1451,10 +1450,10 @@ img {
 }
 .introduction {
   position: relative;
-  height: 1500px;
-  padding-top: 184px;
+  height: 1000px;
+  padding-top: 18px;
   background-color: aqua;
-  background: linear-gradient(135deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%),url("https://elearningindustry.com/wp-content/uploads/2019/09/online-courses-what-students-want.jpg");
+  background: linear-gradient(135deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%),url("https://elearningindustry.com/wp-content/uploads/2019/09/online-courses-what-students-want.jpg") no-repeat center center fixed;
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
 }
@@ -1491,7 +1490,7 @@ img {
   font-weight: 300;
 }
 .introduction{
-  padding: 120px;
+  padding: 10vw;
   text-align: center;
 }
 .button {

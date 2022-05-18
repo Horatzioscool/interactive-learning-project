@@ -1,27 +1,39 @@
 <app-navigation></app-navigation>
 <div class="introduction wf-section">
   <div class="create-card">
-    <div class="w-col w-col-0">
+    <div class="w-container">
+      <div class="w-row">
         <h3>Create a course</h3>
-    </div>
-    <div class="p-field">
-      <label class="field-label" for="course-name">Course Name</label>
-      <input class="contact-field w-input" id="course-name" pInputText [(ngModel)]="newCourse.name" placeholder="Interactive learning" required minlength="5"/>
-    </div>
-    <div class="p-field">
-      <label class="field-label" for="course-description">Course Description</label>
-      <textarea class="contact-field message w-input" id="course-description" pInputTextArea [(ngModel)]="newCourse.description" placeholder="This course studies interactive learning...." required></textarea>
-    </div>
-    <p-divider></p-divider>
-    <app-chapter-list-editor #chapterList></app-chapter-list-editor>
-    <p-divider></p-divider>
-    <div class="p-field">
-      <label class="field-label" for="quiz-url">Quiz Url</label>
-      <input class="contact-field w-input" id="quiz-url" pInputText [(ngModel)]="newCourse.quizUrl" placeholder="www.quizzes.com/?241244" required/>
-    </div>
-    <button class="button w-button" (onClick)="createCourse()">
-      Submit
-    </button>
+        <div class="w-col w-col-6">
+        <div class="w-col w-col-0">
+            <h3>&nbsp; </h3>
+        </div>
+        <div class="p-field">
+          <label class="field-label" for="course-name">Course Name</label>
+          <input class="contact-field w-input" id="course-name" pInputText [(ngModel)]="newCourse.name" placeholder="Interactive learning" required minlength="5"/>
+        </div>
+        <div class="p-field">
+          <label class="field-label" for="course-description">Course Description</label>
+          <textarea class="contact-field message w-input" id="course-description" pInputTextArea [(ngModel)]="newCourse.description" placeholder="This course studies interactive learning...." required></textarea>
+        </div>
+        <div class="p-field">
+          <label class="field-label" for="quiz-url">Quiz Url</label>
+          <input class="contact-field w-input" id="quiz-url" pInputText [(ngModel)]="newCourse.quizUrl" placeholder="www.quizzes.com/?241244" required/>
+        </div>
+      </div>
+          <div class="w-col w-col-6">
+            <div class="w-col w-col-0">
+              <h3>&nbsp; </h3>
+          </div>
+            <app-chapter-list-editor #chapterList></app-chapter-list-editor>    
+          </div>
+        <p-divider></p-divider>
+        
+        <button class="button w-button" (onClick)="createCourse()">
+          Submit
+        </button>
+        </div>
+      </div>
   </div>
 </div>
 
