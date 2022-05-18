@@ -78,5 +78,6 @@ export class CourseChatComponent implements OnInit {
 
     this.courseChat.messages = [...this.courseChat.messages, msg];
     this.courseChatEntityService.update(this.courseChat);
+    this.newMessageText="";
   }
 }

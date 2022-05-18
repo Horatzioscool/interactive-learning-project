@@ -1,45 +1,48 @@
 <app-navigation></app-navigation>
-<p-card [style]="stylepcard">
+<div [style]="stylepcard">
+  <!-- <div class="First">
   <h1>
     {{course.name}}
   </h1>
-  <p>{{course.description}}</p>
-  <p-listbox [options]="chapters">
-    <ng-template let-chapter pTemplate="item">
-      <span>
-        {{chapter.title}}
-      </span>
-    </ng-template>
-  </p-listbox>
+  <p [innerHTML]="course.description"></p>
 
+  </div> -->
 
   <div *ngIf="!progress; else currentChapter">
 
-    <p-button (onClick)="beginCourse()">
+    <p-button (click)="beginCourse()">
       Begin Course
     </p-button>
   </div>
 
-  <ng-template #currentChapter >
-    <div class="current">
-      <div class="align">
-      <app-current-chapter [currentChapter]="getCurrentChapter()"></app-current-chapter>
+  <ng-template #currentChapter>
+    <div class="gotobtns">
+      <div class="prev-next">
+        <button pButton type="button" style="background-color:white;margin:10px;border:3px solid dodgerblue "  class="p-button-text"  (click)="previousChapter()">Previous Chapter</button>
+
+        <button  pButton  style="background-color:white;border:3px solid dodgerblue;margin:10px 0; "  class="p-button-text" (click)="nextChapter()">Next Chapter</button>
       </div>
-    <p-button  (onClick)="previousChapter()">
-      Prev Chapter
-    </p-button>
-    <p-button  (onClick)="nextChapter()">
-      Complete Chapter
-    </p-button>
-    <a *ngIf="progress?.isCourseComplete" [href]="course.quizUrl">
-      Take Quiz
-    </a>
+      <div *ngIf="progress?.isCourseComplete" class="quiz-link">
+        <button  pButton  style="border:1px solid dodgerblue;margin:10px" class="p-button-text"><a [href]="course.quizUrl">Take Quiz</a></button>
+      </div>
+    </div>
+    <div class="current" style="display:flex">
+      <div class="align" style="flex:70%;overflow-y:hidden">
+        <app-current-chapter [currentChapter]="getCurrentChapter"></app-current-chapter>
+      </div>
+    <div class="third" style="flex:30%;float:right; margin-top: 10px;">
+      <div *ngIf="!isEmpty">
+        <p-listbox [options]="chapters">
+          <ng-template let-chapter pTemplate="item">
+            <span>{{chapter.title}}</span>
+          </ng-template>
+        </p-listbox>
+        <app-course-chat [course]="course"></app-course-chat>
+      </div>
+    </div>
+
   </div>
+
   </ng-template>
-</p-card>
-<div style="height: 300px">
 
 </div>
-<p-card *ngIf="!isEmpty">
-  <app-course-chat [course]="course"></app-course-chat>
-</p-card>

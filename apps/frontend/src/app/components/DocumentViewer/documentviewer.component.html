@@ -1,0 +1,6 @@
+
+<div *ngIf="attach.downloadURL!=null">
+  <iframe [src]="this.attach.downloadURL |safe: 'resourceUrl'" style="width:100%;height:100vh;display:block"></iframe>
+
+</div>
+

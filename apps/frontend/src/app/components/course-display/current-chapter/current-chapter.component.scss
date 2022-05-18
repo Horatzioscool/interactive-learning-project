@@ -1,6 +1,28 @@
 .header{
   text-align:center;
 }
+
 .current{
   text-align:center;
+}
+
+.description {
+  margin-left:10px;
+}
+
+.chapter-title {
+  margin: 20px 0;
+  border-bottom: 1px solid grey;
+}
+
+.chapter-video{
+  overflow-y:hidden;
+  max-height:40%;
+  max-width:100%;
+  margin:10px;
+}
+
+.attachments{
+  margin-left:20px;
+  margin-bottom: 20px;
 }
