@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {CommonModule, DatePipe} from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -48,7 +48,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ImageModule } from 'primeng/image';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { EditorModule } from 'primeng/editor';
-import {SafePipe} from "./components/DocumentViewer/SafePipe";
 import { ChapterListEditorComponent } from './components/create-course/chapter-list-editor/chapter-list-editor.component';
 import { CreateChapterComponent } from './components/create-course/chapter-list-editor/create-chapter/create-chapter.component';
 import { CourseDisplayComponent } from './components/course-display/course-display.component';
@@ -58,11 +57,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { TeacherChatComponent } from './components/teacher-chat/teacher-chat.component';
 import { CourseChatComponent } from './components/course-display/course-chat/course-chat.component';
 import { CoursePreviewComponent } from './components/course-preview/course-preview.component';
-import {DocumentViewerComponent} from "./components/DocumentViewer/documentviewer.component";
-import {NgxDocViewerModule} from "ngx-doc-viewer";
-import {PdfViewerModule} from "ng2-pdf-viewer";
-import {DocumentPreviewComponent} from "./components/document-preview/document-preview";
-import {MatGridListModule} from "@angular/material/grid-list";
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { DocumentPreviewComponent } from './components/document-preview/document-preview';
+import { MatGridListModule } from '@angular/material/grid-list';
 /* import {CardFancyExample } from "./components/common/card.component"; */
 
 export const UiComponentModules = [
@@ -105,28 +103,26 @@ export const UiComponentModules = [
     NavigationComponent,
     TeacherChatComponent,
     CoursePreviewComponent,
-    DocumentViewerComponent,
     DocumentPreviewComponent,
-    SafePipe
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AngularFireModule.initializeApp(environment.firebase),
-        AngularFireAuthModule,
-        AngularFirestoreModule,
-        AngularFireStorageModule,
-        AngularFireDatabaseModule,
-        AppRoutingModule,
-        FormsModule,
-        CommonModule,
-        HttpClientModule,
-        ...UiComponentModules,
-        NgxDocViewerModule,
-        PdfViewerModule,
-        MatGridListModule,
-    ],
-  providers: [AuthService, EntityServiceFactory,DatePipe],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    AppRoutingModule,
+    FormsModule,
+    CommonModule,
+    HttpClientModule,
+    ...UiComponentModules,
+    NgxDocViewerModule,
+    PdfViewerModule,
+    MatGridListModule,
+  ],
+  providers: [AuthService, EntityServiceFactory, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

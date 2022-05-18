@@ -16,7 +16,7 @@ import { AttachmentsService } from 'src/app/shared/services/attachments.service'
   styleUrls: ['./attach.component.scss'],
 })
 export class AttachComponent implements OnInit {
-  @Input('isVideoOnly') isVideoOnly!: boolean;
+  @Input('isVideoOnly') isVideoOnly: boolean = false;
 
   @ViewChild('op') overlayPanel!: OverlayPanel;
 

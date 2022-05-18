@@ -1,15 +1,6 @@
 <app-navigation></app-navigation>
 <div [style]="stylepcard">
-  <!-- <div class="First">
-  <h1>
-    {{course.name}}
-  </h1>
-  <p [innerHTML]="course.description"></p>
-
-  </div> -->
-
   <div *ngIf="!progress; else currentChapter">
-
     <p-button (click)="beginCourse()">
       Begin Course
     </p-button>
@@ -19,11 +10,11 @@
     <div class="gotobtns">
       <div class="prev-next">
         <button pButton type="button" style="background-color:white;margin:10px;border:3px solid dodgerblue "  class="p-button-text"  (click)="previousChapter()">Previous Chapter</button>
-
-        <button  pButton  style="background-color:white;border:3px solid dodgerblue;margin:10px 0; "  class="p-button-text" (click)="nextChapter()">Next Chapter</button>
+        <button  pButton  style="background-color:white;border:3px solid dodgerblue;margin:10px 0; "  class="p-button-text" (click)="nextChapter()">{{isCurrentChapterComplete ? 'Next Chapter' : 'Complete Chapter'}}</button>
       </div>
       <div *ngIf="progress?.isCourseComplete" class="quiz-link">
-        <button  pButton  style="border:1px solid dodgerblue;margin:10px" class="p-button-text"><a [href]="course.quizUrl">Take Quiz</a></button>
+        <button  pButton  style="border:1px solid dodgerblue;margin:10px" class="p-button-text"><a [href]="getCurrentChapter.quizUrl">Take Quiz Again</a></button>
+        <span style="padding: 5%">(For this chapter)</span>
       </div>
     </div>
     <div class="current" style="display:flex">

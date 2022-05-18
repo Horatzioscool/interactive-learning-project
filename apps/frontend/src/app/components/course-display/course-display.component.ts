@@ -89,6 +89,11 @@ export class CourseDisplayComponent implements OnInit {
     const id = this.progress?.currentChapterId;
     const index = this.chapters.findIndex((c) => c.id == id);
     const nextIndex = index + 1;
+    if (!this.isCurrentChapterComplete)
+      window.open(this.getCurrentChapter.quizUrl, '_blank');
+
+    if (id) this.completeChapter(id);
+
     if (nextIndex == this.chapters.length) {
       this.progress.isCourseComplete = true;
       this.courseeProgressService.update(this.progress);
@@ -97,6 +102,7 @@ export class CourseDisplayComponent implements OnInit {
       this.courseeProgressService.update(this.progress);
     }
   }
+
   public previousChapter() {
     if (!this.progress) throw new Error('Progress was undefined!');
     const id = this.progress.currentChapterId;
@@ -108,7 +114,19 @@ export class CourseDisplayComponent implements OnInit {
     this.courseeProgressService.update(this.progress);
   }
 
-  public takeQuiz() {
-    if (this.course.quizUrl) window.location.href = this.course.quizUrl;
+  private completeChapter(chapterId: string) {
+    if (!this.progress?.completedChapterIds.includes(chapterId))
+      this.progress?.completedChapterIds.push(chapterId);
+  }
+
+  public get isCurrentChapterComplete() {
+    if (
+      this.progress?.currentChapterId &&
+      this.progress?.completedChapterIds?.includes(
+        this.progress.currentChapterId
+      )
+    )
+      return true;
+    return false;
   }
 }

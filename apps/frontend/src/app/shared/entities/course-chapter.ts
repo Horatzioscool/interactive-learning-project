@@ -7,4 +7,5 @@ export class CourseChapter extends Entity {
   attachmentIds?: string[];
   description?: string;
   chapterNumber: number = 0;
+  quizUrl?: string;
 }

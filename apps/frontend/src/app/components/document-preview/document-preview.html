@@ -1,7 +1,15 @@
-<mat-card class="example-card side" style="max-width: 30vh;max-height:20vh">
-  <img mat-card-image src='https://tse2.mm.bing.net/th?id=OIP.Q0UJNCJTBg6Oq2xm0DCRLQAAAA&pid=Api&P=0&w=166&h=166' alt="Course Photo" (click)="goToDocument()">
+<mat-card class="example-card side" style="max-width: 30vh;max-height:20vh;cursor: pointer; overflow: hidden">
+  <div *ngIf="isImage">
+    <p-image [src]="attachment?.downloadURL || '#'" width="100" [preview]="true">
+    </p-image>
+  </div>
+  <div *ngIf="isVideo" (click)="linkToAttachment()">
+    <i class="pi pi-camera"></i>
+  </div>
+  <div *ngIf="isDocument" (click)="linkToAttachment()">
+    <i class="pi pi-file"></i>
+  </div>
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
   </mat-card-header>
 </mat-card>
 

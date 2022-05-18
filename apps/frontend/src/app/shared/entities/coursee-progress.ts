@@ -5,4 +5,6 @@ export class CourseeProgress extends Entity {
 
   currentChapterId?: string;
   isCourseComplete: boolean = false;
+
+  completedChapterIds: string[] = [];
 }

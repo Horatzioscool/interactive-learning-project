@@ -32,6 +32,10 @@
       {{newChapterDescription}}
     </div>
   </div>
+  <div class="p-field">
+    <label class="field-label" for="quiz-url">Quiz Url</label>
+    <input class="contact-field w-input" id="quiz-url" pInputText [(ngModel)]="newChapterQuizUrl" placeholder="www.quizzes.com/?241244" required/>
+  </div>
 
   <button class="button" (onClick)="created()">
     Submit
