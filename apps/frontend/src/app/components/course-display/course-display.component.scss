@@ -1,8 +1,31 @@
 .First{
   text-align:center;
 }
+
 .third{
   min-width:700px;
-border:none;
+  border:none;
+}
 
+.gotobtns{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.prev-next{
+  flex: 90%;
+}
+
+.quiz-link {
+  flex: 10%;
+}
+
+.quiz-link a{
+  text-decoration: none;
+}
+
+.quiz-btn:hover{
+  background-color: dodgerblue;
+  color:white;
 }
