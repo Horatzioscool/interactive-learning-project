@@ -1,0 +1,69 @@
+.authBlock{
+  padding-bottom: 30px;
+}
+.displayTableCell {
+  background: linear-gradient(135deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%), url("../../assets/img/online-courses-what-students-want_auto_x2.jpg") no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: 999px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+}
+
+.subtitle {
+  font-size: 2em;
+  color: #fff;
+  font-family: Lora,sans-serif;
+}
+.subheading {
+  margin-bottom: 30px;
+  font-family: Oxygen, sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.redirectToLogin{
+  color: #202f9c;
+}
+
+.btn{
+  font-family: Oxygen, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.btnPrimary{
+  background-color: orange;
+}
+
+.googleBtn{
+  background-color:#202f9c;
+}
+
+.redirectToLogin{
+  font-family: Lora,sans-serif;
+  color: #202f9c;
+  font-size: 17px;
+}
+
+.resetPassword{
+  font-family: Lora,sans-serif;
+  color: #202f9c;
+  font-size: 17px;
+}
+.resetPassword:hover{
+  color: orange;
+}
+
+.redirect{
+  color: orange;
+}
